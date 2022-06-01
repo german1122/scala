@@ -1,0 +1,165 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+
+        <title>Cotizador</title>
+        <!--link rel="stylesheet" href="{{url_for('static', filename = "assets/css/custom.css")}}"-->
+        <!--style>
+        body {
+        height: 150%
+        background-color: rgba(0, 0, 0, .5);
+        }
+        </style-->
+        <style type="text/css">
+        @media print { body { -webkit-print-color-adjust: exact; } }
+        </style>
+    </head>
+                <body>
+                    <h3>Cotización de Crédito Simple</h1>
+                    <h4>México, CDMX, a {{hoy}}.</h2>
+                    <h5>
+                        <p>A quien corresponda, extendemos la siguiente cotización de crédito dirigido por parte de Flamingo KPTL, SAPI de CV. Este proyecto será dirigido en la compra de {{nombre}}</p>
+                        <p>El capital financiado de este proyecto es de <span class="badge badge-light">{{capital}}.</span></p>
+                        <p>Este proyecto tendrá una duración de  <span class="badge badge-light">{{years}}</span> años.</p>
+                        <p>El pago {% if dias==30:%}
+                                        mensual
+                                   {% elif dias==15:%}
+                                        quincenal
+                                   {% elif dias==14:%}
+                                        catorcenal
+                                   {% elif dias==7:%}
+                                        semanal
+                                   {% endif %}
+
+
+
+
+                            de este crédito será de <span class="badge badge-light">{{pago}}</span> más un seguro*
+                                   {% if dias==30:%}
+                                        mensual
+                                   {% elif dias==15:%}
+                                        quincenal
+                                   {% elif dias==14:%}
+                                        catorcenal
+                                   {% elif dias==7:%}
+                                        semanal
+                                   {% endif %}  por {{acc}}.</p>
+                        <p>El desembolso total de este proyecto es de: {{desembolso}}.</p>
+                        <!--p>Así, se pagarían en intereses el siguiente monto promedio anual: {% if years >= 1: %}
+                                                                                                {{intereses}}
+                                                                                            {% else: %}
+                                                                                                {{int_total}}
+                                                                                            {% endif %}.</p-->
+                        <p>La tasa ordinaria anual del proyecto equivale a: <span class="badge badge-light">{{tir}}</span></p-->
+                        <!--p>La TIR anual, incluyendo IVA, del proyecto equivale a: {{tiriva}} </p>
+                        <p>El CAT anual del proyecto, según Banxico, equivale a: {{cat}}. </p-->
+                        <p>El costo de capital anual bruto del proyecto es de: <span class="badge badge-light">{{costo}}.</span>  </p>
+                        <p><a href="{{ url_for('cotizador.cotizador')}}" class="btn btn-primary">Haz click aquí para volver a calcular!</a>
+                        </p>
+
+
+                    </h5>
+                    <!--div class="table-responsive"-->
+
+
+
+                      <p align="right"><a  href="javascript:window.print()" class="btn btn-primary">Imprimir PDF</a>
+                        </p>
+
+                    <p>A continuación se muestra la tabla de pagos de este proyecto. Nota: el capital incluye una comisión de {{comision}} que contempla pago por avalúos, servicios notariales, legales o de índole financiera.</p>
+                    <div class="left">
+                        <table class = "table table-sm"  style="width: unset;">
+                            <thead>
+                                <tr>
+                                    {% for col in column_names %}
+                                    <th>
+
+                                        {{col}}
+
+                                    </th>
+                                    {% endfor %}
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for row in row_data %}
+                                <tr>
+                                    {% for col, row_ in zip(column_names, row) %}
+                                    <td>{{row_}}</td>
+                                    {% endfor %}
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </body>
+            <div class="alert alert-light" role="alert" style="width: 53rem;">
+
+
+
+            <p>* El valor del seguro es informativo y será debidamente cotizado ante la aceptación de esta cotización.</p>
+            <p>© Vilar KPTL, todos los derechos reservados: Patricio Sanz 503, Del Valle, Benito Juárez, 03720, CDMX</p>
+            </div>
+            
+            <div>
+
+            {% if Agregar==2:%}
+                 <p>Los datos a reestructurar contienen las siguientes características:</p>
+                 <div class="left">
+                     <table class = "table table-sm"  style="width: unset;">
+                         <thead>
+                             <tr>
+                                 {% for col in columns %}
+                                 <th>
+
+                                     {{col}}
+
+                                 </th>
+                                 {% endfor %}
+                             </tr>
+                         </thead>
+                         <tbody>
+                             {% for row in rows %}
+                             <tr>
+                                 {% for col, row_ in zip(columns, row) %}
+                                 <td>{{row_}}</td>
+                                 {% endfor %}
+                             </tr>
+                             {% endfor %}
+                         </tbody>
+                     </table>
+                 </div>
+             </body>
+         <div class="alert alert-light" role="alert" style="width: 53rem;">
+
+           <p> La reestructura propuesta contiene las siguientes características:</p>
+           <div class="left">
+               <table class = "table table-sm"  style="width: unset;">
+                   <thead>
+                       <tr>
+                           {% for col in columns2 %}
+                           <th>
+
+                               {{col}}
+
+                           </th>
+                           {% endfor %}
+                       </tr>
+                   </thead>
+                   <tbody>
+                       {% for row in rows2 %}
+                       <tr>
+                           {% for col, row_ in zip(columns2, row) %}
+                           <td>{{row_}}</td>
+                           {% endfor %}
+                       </tr>
+                       {% endfor %}
+                   </tbody>
+               </table>
+           </div>
+       </body>
+   <div class="alert alert-light" role="alert" style="width: 53rem;">
+            {% endif %}
+          </div>
+</html>
+{% endblock %}

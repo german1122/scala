@@ -1,0 +1,76 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <title>Cotizador</title>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"-->
+    </head>
+        <body>
+
+            <form method="post" action="{{ url_for('cotizador.cotizador')}}">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Periodo</span>
+                        <input type="text" class="form-control" placeholder="¿Cada cuantos días pagarán?" aria-label="days" name = "dias">
+                    </div>
+            <!--label for="dias">Días:</label-->
+                <!--p><input name="dias"/></p-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Tasa ordinaria</span>
+                        <input type="text" class="form-control" placeholder="En decimales" aria-label="days" name = "tasa_ordinaria_anual">
+                    </div>
+                <!--label for="tasa_ordinaria_anual">Tasa ordinaria:</label-->
+                <!--p><input name="tasa_ordinaria_anual"/></p-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Duración</span>
+                        <input type="text" class="form-control" placeholder="En años (hasta en decimales)" aria-label="years" name = "years">
+                    </div>
+                <!--label for="years">Años (cantidad):</label-->
+                <!--p><input name="years" /></p-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Principal</span>
+                        <input type="text" class="form-control" placeholder="Escribe la cantidad" aria-label="capital" name = "Principal">
+                    </div>
+                <!--label for="Principal">Principal:</label-->
+                <!--p><input name="Principal" /></p-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Comisión</span>
+                        <input type="text" class="form-control" placeholder="En decimales" aria-label="comission" name = "tasa_comision">
+                    </div>
+                <!--label for="tasa_comision">Comisión %:</label-->
+                <!--p><input name="tasa_comision" /></p-->
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Fecha de disposición</span>
+                    <input type="date" class="form-control" placeholder="Fecha en la que será ministrado el capital" aria-label="start month" name = "fechainicio" min="2020-01-01" max="2040-01-01">
+                </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Accesorios</span>
+                        <input type="text" class="form-control" placeholder="Monto anual" aria-label="start date" name = "acc">
+                    </div>
+                <!--label for="dia"> Día (inicio):</label-->
+                <!--p><input name="dia" /></p-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">¿Agregar a BDD?</span>
+                        <input type="text" class="form-control" placeholder="'1' si sí" aria-label="start date" name = "agregar">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                        <input type="text" class="form-control" placeholder="Nombre o ID del cliente" aria-label="start date" name = "nombre">
+                    </div>
+                    <button class="btn btn-primary" type="submit">Cotizar</button>
+                <!--p><input type="submit" value="Cotizar" /></p-->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </form>
+        </body>
+</html>
+{% endblock %}

@@ -1,0 +1,45 @@
+
+{% extends "base0.html" %}
+
+{% block content %}
+<head>
+   <link
+     href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+     rel="stylesheet"
+   />
+ </head>
+ <body>
+   <div id="wrapper"></div>
+
+   <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+   <script src="src/index.js"></script>
+ </body>
+
+{% endblock %}
+
+{% block scripts %}
+
+<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gridjs/dist/gridjs.umd.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
+<script type="module">
+    import {
+        Grid,
+        html
+    } from "https://unpkg.com/gridjs?module";
+</script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script type="text/javascript">
+  new gridjs.Grid({
+    columns: ["Name", "Email", "Phone Number"],
+    data: [
+      ["John", "john@example.com", "(353) 01 222 3333"],
+      ["Mark", "mark@gmail.com", "(01) 22 888 4444"],
+      ["Eoin", "eoin@gmail.com", "0097 22 654 00033"],
+      ["Sarah", "sarahcdd@gmail.com", "+322 876 1233"],
+      ["Afshin", "afshin@mail.com", "(353) 22 87 8356"]
+    ]
+  }).render(document.getElementById("wrapper"));
+</script>
+
+{% endblock %}

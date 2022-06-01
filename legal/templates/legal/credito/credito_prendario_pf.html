@@ -1,0 +1,808 @@
+{% extends "base0.html" %}
+{% block content %}
+
+
+<p style="text-align: right;"><span style="font-weight: 400;">No. CONTRATO {{numero_contrato}}.</span></p>
+<p style="text-align: center;"><strong>CAR&Aacute;TULA</strong></p>
+<p style="text-align: left;"><br /><span style="font-weight: 400;">La presente Car&aacute;tula forma parte integrante del </span><strong>Contrato Maestro de</strong> <strong>Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria Sin Transmisi&oacute;n de la Posesi&oacute;n</strong><span style="font-weight: 400;"> cuyo n&uacute;mero se se&ntilde;ala en el extremo superior derecho de este documento y contendr&aacute; los datos e informaci&oacute;n personal y/o corporativa de cada una de las Partes, respectivamente. Los t&eacute;rminos que sean empleados en esta Car&aacute;tula, ser&aacute;n t&eacute;rminos definidos y ostentar&aacute;n el significado que correlativamente se les asign&oacute; en el citado Contrato, salvo que se les atribuya un significado distinto.</span></p>
+
+
+
+<row>
+	<div class="col-lg-8">
+		<div class="card text-center"  style="width: 52rem;">
+			<div class="card-header">
+				<h5 class="card-title" >Información de las Partes</h5>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover">
+					<thead>
+						<tr>
+							<th scope="col" colspan="8">Información de la Acreditante</th>
+							<!--th scope="col">Nombre</th>
+							<th scope="col">Domicilio</th>
+							<th scope="col">Página Web</th>
+							<th scope="col">Nombre Apoderado o Representante Legal</th>
+							<th scope="col">RFC</th-->
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Nombre:</td>
+							<td colspan="4">{{acreditante}}</td>
+							<td>RFC:</td>
+							<td colspan="2">{{RFC_acreditante}}</td>
+						</tr>
+						<tr>
+							<td>Domicilio:</td>
+							<td colspan="4">{{domicilio_acreditante}}</td>
+							<td>Página Web:</td>
+							<td colspan="2">{{pagina_web}}</td>
+						</tr>
+						<tr>
+							<td colspan="4">Nombre Apoderado o Representante Legal:</td>
+							<td colspan="3">{{apoderado_acreditante}}</td>
+						</tr>
+					<thead>
+						<tr>
+							<th scope="col" colspan="8">Poder Representante o Apoderado Legal</th>
+						</tr>
+					</thead>
+						<tr>
+							<td>Facultades otorgadas:</td>
+							<td colspan="2">{{facultades}}</td>
+							<td>Póliza:</td>
+							<td>{{poliza}}</td>
+							<td>Fecha:</td>
+							<td>{{fecha_poliza}}</td>
+						</tr>
+						<tr>
+							<td>Nombre de Fedatario Público:</td>
+							<td colspan="2">{{fedatario}}</td>
+							<td>Notaría/Correduría Pública No.:</td>
+							<td>{{numero_notaria}}</td>
+							<td>Entidad Federativa:</td>
+							<td colspan="2">{{entidad}}</td>
+						</tr>
+						<tr>
+							<td>Inscripción (folio mercantil):</td>
+							<td>{{folio_mercantil}}</td>
+							<td>Lugar de inscripción:</td>
+							<td colspan="2">{{lugar_inscripcion}}</td>
+							<td>Fecha de inscripción:</td>
+							<td>{{fecha_inscripcion}}</td>
+						</tr>
+					<!--thead>
+						<tr>
+							<th scope="col" colspan="8">Información de la Acreditada y Garante Prendaria (Persona Moral)</th>
+						</tr>
+					</thead>
+						<tr>
+							<td colspan="2">Denominación Completa:</td>
+							<td colspan="2">{{denominacion}}</td>
+							<td>RFC:</td>
+							<td colspan="3">{{RFC_acreditada}}</td>
+						</tr>
+						<tr>
+							<td>Nacionalidad:</td>
+							<td colspan="1">{{nacionalidad}}</td>
+							<td>Giro:</td>
+							<td colspan="4">{{giro}}</td>
+						</tr>
+						<tr>
+							<td>Teléfonos:</td>
+							<td colspan="3">{{telefonos}}</td>
+							<td>Email:</td>
+							<td colspan="2">{{email}}</td>
+						</tr>
+							<td colspan="4">Domicilio (Calle, número, colonia, ciudad, estado, C.P.):
+							</td>
+							<td colspan="4">{{domicilio_acreditada}}</td>
+						</tr>
+						<tr>
+							<td colspan="3">Nombre Representante o Apoderado Legal:</td>
+							<td colspan="4">{{apoderado_acreditada}}</td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="4"></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td colspan="4"></td>
+						</tr>
+						</tr>
+					<thead>
+						<tr><br>
+							<br>
+							<br>
+							<th scope="col" colspan="8">Constitución acreditada</th>
+						</tr>
+					</thead>
+						<tr>
+							<td>Denominación inicial:</td>
+							<td colspan="2">{{denominacion}}</td>
+							<td>Instrumento:</td>
+							<td>{{instrumento_acreditada}}</td>
+							<td>Fecha:</td>
+							<td>{{fecha_acreditada}}</td>
+						</tr>
+						<tr>
+							<td>Fedatario público:</td>
+							<td>{{fedatario_publico_acreditada}}</td>
+							<td>Notaría/Correduría:</td>
+							<td>{{notaria_acreditada}}</td>
+							<td>Entidad:</td>
+							<td colspan="3">{{entidad_acreditada}}</td>
+						</tr>
+						<tr>
+							<td>Inscripción:</td>
+							<td>{{inscripcion_acreditada}}</td>
+							<td>Lugar de inscripción:</td>
+							<td>{{lugar_inscripcion_acreditada}}</td>
+							<td>Fecha de inscripción:</td>
+							<td>{{fecha_inscripcion_acreditada}}</td>
+						</tr>
+						<tr>
+							<td>Actos corporativos posteriores:</td>
+							<td colspan="7">{{actos_corporativos}}</td>
+						</tr>
+					<thead-->
+					<br>
+					<br>
+						</tr>
+						<tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</row>
+
+<!--row>
+	<div class="col-lg-8">
+		<div class="card text-center" style="width: 52rem;">
+			<div class="card-header">
+				<div class="card-title"></div>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover" style="width: unset;">
+              	    	  	<br>
+							<br>
+							<br>
+							<br>
+							<th scope="col" colspan="8">Poder Representante o Apoderado Legal (Acreditada)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Facultades otorgadas:</td>
+							<td colspan="3">{{facultades_apoderado}}</td>
+							<td>Póliza:</td>
+							<td colspan="3">{{poliza_apoderado}}</td>
+							<td>Fecha:</td>
+							<td colspan="3">{{fecha_poliza_apoderado}}</td>
+						</tr>
+						<tr>
+							<td>Nombre de Fedatario Público:</td>
+							<td colspan="2">{{fedatario_publico_acreditada}}</td>
+							<td>Notaría/Correduría Pública No.:</td>
+							<td colspan="4">{{notaria_acreditada}}</td>
+							<td>Entidad Federativa:</td>
+							<td colspan="2">{{entidad_acreditada}}</td>
+						</tr>
+						<tr>
+							<td>Inscripción (folio mercantil):</td>
+							<td colspan="2">{{inscripcion_acreditada}}</td>
+							<td>Lugar de inscripción:</td>
+							<td colspan="4">{{lugar_inscripcion_acreditada}}</td>
+							<td>Fecha de inscripción:</td>
+							<td colspan="2">{{fecha_inscripcion_acreditada}}</td>
+						</tr>
+						<!--tr>
+							<td>Autorización acreditada:</td>
+							<td colspan="6">Los datos personales pueden utilizarse para mercadeo</td>
+							<td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1"></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</row-->
+<row>
+	<div class="col-lg-8"-->
+		<div class="card text-center" style="width: 52rem;">
+				<div class="card-header">
+				<div class="card-title"></div>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover" style="width: unset;">
+							<th scope="col" colspan="8">Información de la Acreditada (Persona Física)</th>
+						</tr>
+					</thead>
+						<tr>
+							<td>Nombre:</td>
+							<td>{{obligado_solidario}}</td>
+							<td>RFC:</td>
+							<td colspan="3">{{RFC_obligado}}</td>
+							<td>Régimen Social:</td>
+							<td colspan="2">{{regimen_social}}</td>
+						</tr>
+						<tr>
+							<td>Nacionalidad:</td>
+							<td>{{nacionalidad_obligado}}</td>
+							<td colspan="3">Originario de:</td>
+							<td>{{ciudad_obligado}}</td>
+							<td>CURP:</td>
+							<td>{{curp}}</td>
+						</tr>
+						<tr>
+							<td>Ocupación:</td>
+							<td>{{ocupacion}}</td>
+							<td>Teléfonos:</td>
+							<td colspan="4">{{telefono_obligado}}</td>
+							<td>e-mail:</td>
+							<td>{{email_obligado}}</td>
+						</tr>
+						<tr>
+							<td>Domicilio:</td>
+							<td colspan="6">{{domicilio_obligado}}</td>
+							<td>Estado Civil:</td>
+							<td colspan="4">{{estado_civil}}</td>
+						</tr>
+					<thead>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</row>
+<p></p>
+<!--row>
+	<div class="col-lg-8">
+		<div class="card text-center" style="width: 52rem;">
+				<div class="card-header">
+				<div class="card-title"></div>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover" style="width: unset;">
+							<th scope="col" colspan="8">Información del Obligado Solidario (Persona Física)</th>
+						</tr>
+					</thead>
+						<tr>
+							<td>Nombre:</td>
+							<td>{{obligado_solidario}}</td>
+							<td>RFC:</td>
+							<td colspan="3">{{RFC_obligado}}</td>
+							<td>Régimen Social:</td>
+							<td colspan="2">{{regimen_social}}</td>
+						</tr>
+						<tr>
+							<td>Nacionalidad:</td>
+							<td>{{nacionalidad_obligado}}</td>
+							<td colspan="3">Originario de:</td>
+							<td>{{ciudad_obligado}}</td>
+							<td>CURP:</td>
+							<td>{{curp}}</td>
+						</tr>
+						<tr>
+							<td>Ocupación:</td>
+							<td>{{ocupacion}}</td>
+							<td>Teléfonos:</td>
+							<td colspan="4">{{telefono_obligado}}</td>
+							<td>e-mail:</td>
+							<td>{{email_obligado}}</td>
+						</tr>
+						<tr>
+							<td>Domicilio:</td>
+							<td colspan="6">{{domicilio_obligado}}</td>
+							<td>Estado Civil:</td>
+							<td colspan="4">{{estado_civil}}</td>
+						</tr>
+					<thead>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</row-->
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p class = "saltard">Leída que fue la presente Carátula se firma en {{ciudad_firma}}, a {{dias}} de {{mes}} de {{año}}.</p>
+
+
+
+<div class="saltara">
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITANTE</h5>
+              	    	  	<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text" colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Representada: {{acreditante}}</p>
+        <p>Cargo: {{cargo}}</p>
+        <p>Nombre: {{apoderado_acreditante}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITADA</h5>
+        					<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <!--p>Representada: {{denominacion}}</p-->
+        <p>Por su propio derecho:</p>
+        <p>Nombre: {{obligado_solidario}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+
+        <h5 class="card-title">TESTIGO</h5>
+
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Nombre: {{testigo}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="saltard">
+  <div class="col-sm-8">
+	</div>
+</div>
+
+<p class = "saltard" style="text-align: right;">No. CONTRATO {{numero_contrato}}.</p>
+<p style="text-align: right;">&nbsp;</p>
+<p style="text-align: center;"><strong>CONTRATO MAESTRO DE <strong>APERTURA DE CR&Eacute;DITO SIMPLE CON GARANT&Iacute;A PRENDARIA SIN TRANSMISI&Oacute;N DE LA POSESI&Oacute;N</strong></strong></p>
+<p><strong>CONTRATO MAESTRO DE</strong> <strong>APERTURA DE CR&Eacute;DITO SIMPLE CON GARANT&Iacute;A PRENDARIA SIN TRANSMISI&Oacute;N DE LA POSESI&Oacute;N</strong><span style="font-weight: 400;"> (EL &ldquo;CONTRATO&rdquo;), QUE CELEBRAN: </span><strong>(i)</strong><span style="font-weight: 400;"> EN SU CAR&Aacute;CTER DE ACREDITANTE Y ACREEDORA PRENDARIA, {{acreditante}}, A QUIEN EN LO SUCESIVO SE LE DENOMINAR&Aacute; LA &ldquo;</span><strong>ACREDITANTE</strong><span style="font-weight: 400;">&rdquo;</span><strong>, </strong><span style="font-weight: 400;">CUYA INFORMACI&Oacute;N Y DATOS DEL REPRESENTANTE LEGAL, CON TAL CAR&Aacute;CTER, SE CONTIENEN EN EL PRESENTE CONTRATO, LA CAR&Aacute;TULA Y, EN SU CASO, EN LOS ANEXOS "A", RESPECTIVAMENTE; </span><strong>(ii)</strong><span style="font-weight: 400;"> EN SU CAR&Aacute;CTER DE ACREDITADA(S) Y GARANTE(S) PRENDARIA(S), LA(S) PERSONAS(S) F&Iacute;SICA(S) Y/O MORAL(ES), CUYO(S) NOMBRE(S), INFORMACI&Oacute;N Y, EN SU CASO, DATOS DEL (DE LOS) REPRESENTANTE(S) LEGAL(ES), CON TAL CAR&Aacute;CTER, SE CONTIENEN EN EL PRESENTE CONTRATO, LA CAR&Aacute;TULA Y, EN SU CASO, EN LOS ANEXOS A DEL MISMO, RESPECTIVAMENTE, A QUIEN EN LO SUCESIVO SE LE(S) DENOMINAR&Aacute; (DE FORMA CONJUNTA) LA</span> <span style="font-weight: 400;">&ldquo;</span><strong>ACREDITADA; (iii)</span> </strong> EN SU CAR&Aacute;CTER DE OBLIGADO(S) SOLIDARIO(S), LA(S) PERSONA(S) F&Iacute;SICA(S) Y/O MORAL(ES) CUYO(S) NOMBRE(S) Y DATOS DEL (DE LOS) REPRESENTANTE(S) LEGAL(ES), CON TAL CAR&Aacute;CTER, SE CONTIENEN EN EL PRESENTE CONTRATO, LA CAR&Aacute;TULA, Y, EN SU CASO, EN LOS ANEXOS A DEL MISMO, RESPECTIVAMENTE, A QUIEN EN LO SUCESIVO SE LE(S) DENOMINAR&Aacute; (DE FORMA CONJUNTA) EL</span> <span style="font-weight: 400;">&ldquo;</span><strong>OBLIGADO SOLIDARIO</strong><span style="font-weight: 400;">&rdquo;, DE CONFORMIDAD CON LAS DECLARACIONES Y CL&Aacute;USULAS SIGUIENTES:</span></p>
+
+<p><strong>D E C L A R A C I O N E S</strong><span style="font-weight: 400;">:</span></p>
+
+<p>&nbsp;</p>
+<ul>
+<li><strong><strong>Declara la ACREDITANTE, por conducto de su representante legal, que:</strong></strong></li>
+</ul>
+<p>&nbsp;</p>
+<ol>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Es una Sociedad An&oacute;nima Promotora de Inversi&oacute;n de Capital Variable, constituida conforme a las leyes de los Estados Unidos Mexicanos.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Su domicilio, RFC se encuentran se&ntilde;alado en la Car&aacute;tula y, en su caso, en los Anexos A del presente Contrato, respectivamente.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Dentro de su objeto social se encuentra la realizaci&oacute;n de operaciones de otorgamiento de cr&eacute;dito, por lo que la celebraci&oacute;n del presente Contrato, su o sus Anexos A y cualquier otro documento suscrito a su amparo, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Con el car&aacute;cter de representante legal, posee las facultades suficientes y necesarias para celebrar en su representaci&oacute;n el presente Contrato y dem&aacute;s documentos suscritos o a ser suscritos a su amparo, oblig&aacute;ndola en los t&eacute;rminos del mismo, lo cual se acredita con el instrumento p&uacute;blico se&ntilde;alado en la Car&aacute;tula y, en su caso, en los Anexos A del presente Contrato, facultades que no le han sido revocadas ni limitadas de forma alguna.</span></li>
+</ol>
+</ol>
+
+<p>&nbsp;</p>
+<ul>
+<li><strong><strong>Declara la ACREDITADA, bajo protesta de decir verdad, por su propio derecho o por conducto de su(s) representante(s) legal(es), seg&uacute;n corresponda, que:</strong></strong></li>
+</ul>
+<p>&nbsp;</p>
+<ol>
+
+<!--li style="font-weight: 400;"><strong>[(Persona Moral)</strong><span style="font-weight: 400;"> Es una sociedad constituida conforme a las leyes de los Estados Unidos Mexicanos y su objeto social le permite la celebraci&oacute;n del presente Contrato y dem&aacute;s documentos que se suscriban a su amparo, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes.</span><strong></strong></li-->
+
+<li><!--strong>[(Persona F&iacute;sica)</strong--><span style="font-weight: 400;"> Es persona f&iacute;sica, con mayor&iacute;a de edad, con plena capacidad para celebrar el presente Contrato y cualesquiera otros documentos que se suscriban a su amparo, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes y que la Acreditante</span> <span style="font-weight: 400;">ha puesto a su disposici&oacute;n el aviso de privacidad a que se refiere la LFPDPPP, mismo que ha consentido.</span><strong></strong></li>
+
+<!--li><strong><strong>[Persona Moral y/o Persona F&iacute;sica]</strong><span style="font-weight: 400;"> Con el car&aacute;cter de representante(s) o apoderado(s) legal(es), respectivamente, posee(n) las facultades suficientes y necesarias para celebrar en su representaci&oacute;n el presente Contrato y dem&aacute;s documentos suscritos a su amparo, oblig&aacute;ndola(s) en los t&eacute;rminos del (de los) mismo(s), lo cual se acredita con el(los) instrumento(s) p&uacute;blico(s) se&ntilde;alado(s) en la Car&aacute;tula y/o sus Anexos A del presente Contrato, facultades que no le(s) han sido revocadas ni limitadas de forma alguna.</span></strong></li-->
+
+<li><span style="font-weight: 400;">Para los efectos relacionados con este Contrato, se&ntilde;ala como sus datos personales, domicilio y RFC los indicados en la Car&aacute;tula y/o los Anexos A del presente Contrato. Manifiesta expresamente que conoce previamente todos los t&eacute;rminos y condiciones del presente Contrato, as&iacute; como los diversos Anexos A qu&eacute; se suscriban al amparo del mismo.</span></li>
+
+<li style="font-weight: 400;"><span style="font-weight: 400;">Se encuentra al corriente en el pago de sus contribuciones.</span></li>
+
+
+<li><strong><span style="font-weight: 400;">Cuenta con recursos financieros y materiales, necesarios y suficientes, para cumplir con las obligaciones de pago y dem&aacute;s obligaciones a su cargo, derivadas de este Contrato y sus Anexos A y cualesquiera otros documentos suscritos a su amparo.&nbsp;</span></strong></li>
+
+<li><span style="font-weight: 400;">La suscripci&oacute;n del presente Contrato, sus anexos y cualesquiera otros documentos que se suscriban a su amparo no contravienen ni resultan en conflicto con: (i) sus estatutos, en su caso; (ii) cualquier contrato o acto jur&iacute;dico que tenga celebrado; o (iii) con la legislaci&oacute;n, reglamentaci&oacute;n o normativa, federal, estatal o municipal vigente de los Estados Unidos Mexicanos que por cualquier causa le pudiese resultar aplicable, respectivamente.</span></li>
+<p></p>
+<li><span style="font-weight: 400;">No tiene obligaci&oacute;n contingente alguna que, de resultar exigible, pudiere tener un efecto adverso en su situaci&oacute;n financiera o en sus operaciones y que pudiere representar un riesgo en el cumplimiento de las obligaciones que contraiga con el presente Contrato, sus anexos y cualesquiera otros documentos suscritos a su amparo.</span></li>
+
+<li><span style="font-weight: 400;">No existe ning&uacute;n contrato, convenio, documento, disposici&oacute;n gubernamental, decreto, sentencia u orden que limite, grave o restrinja el dominio de sus bienes o derechos, salvo los que ha hecho del conocimiento de la Acreditante, o que afecte su condici&oacute;n financiera y/o econ&oacute;mica que pudiere representar un riesgo en el cumplimiento de las obligaciones que contraiga con el presente Contrato, sus anexos y cualesquiera otros documentos suscritos a su amparo.</span></li>
+
+
+<li style="font-weight: 400;"><span style="font-weight: 400;">Manifiesta y hace constar que, a la firma del presente Contrato, ha recibido un ejemplar en original del mismo, acompa&ntilde;ado de todos sus anexos y de los dem&aacute;s documentos suscritos a su amparo, los cuales forman parte integrante del mismo.</span></li>
+
+<li><strong><span style="font-weight: 400;">Manifiesta bajo protesta de decir verdad que sus datos proporcionados a la Acreditante y los asentados en este Contrato, Car&aacute;tula y Anexos A son verdaderos; que su actividad empresarial consiste en desarrollar actividades l&iacute;citas, generadoras de los recursos necesarios para cumplir con todo o parte de sus obligaciones derivadas del presente Contrato. Manifestando, asimismo, que las cantidades recibidas, son destinadas a fines permitidos por la ley, y que de acuerdo con su leal saber y entender, no est&aacute; incurriendo en conductas tipificadas como delitos se&ntilde;alados en los art&iacute;culos 139 Qu&aacute;ter y 400 Bis del CPF, mismos que conoce a la letra.</span></strong></li>
+
+<li style="font-weight: 400;"><span style="font-weight: 400;">Es su voluntad expresa constituir en los t&eacute;rminos de este Contrato, garant&iacute;a prendaria sin transmisi&oacute;n de la posesi&oacute;n sobre los Bienes Pignorados de su propiedad, que se encuentran detallados en el o los Anexos A del presente Contrato, respectivamente, en favor de la Acreditante, con el objeto de garantizar el exacto y puntual cumplimiento de todas y cada una de las obligaciones de pago asumidas al amparo del presente Contrato, el o los Anexos A y Pagar&eacute;, as&iacute; como todas aquellas que puedan resultar de dichos instrumentos, manifestando bajo protesta de decir verdad que los Bienes Pignorados, no se encuentran otorgados en garant&iacute;a ni gravados a favor de terceros.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Es leg&iacute;tima y &uacute;nica propietaria de los Bienes Pignorados, respectivamente, como lo acredita con la factura y/o certificado digital </span><strong>Folio Fiscal: {{folio_fiscal}}, Fecha y Hora de Emisi&oacute;n: {{fecha_emision}}, Serie: {{serie}}, Folio: {{folio_bien}}, emitido por {{proveedor}}</strong><span style="font-weight: 400;">, que se adjunta como Anexo B a este Contrato</span><span style="font-weight: 400;">; documento que es cedido en garant&iacute;a por virtud del presente Contrato y hace entrega a la Acreditante, manifestando bajo protesta de decir verdad y declarando as&iacute; mismo que no existe ninguna limitaci&oacute;n legal que le impida disponer de ellos o alg&uacute;n derecho preferencial en favor de terceras personas, que impida otorgarlos en garant&iacute;a a la Acreditante, y que en la fecha en que adquiri&oacute; los mismos, se cercior&oacute; de que las personas que se los transmitieron, contaban con las facultades suficientes para hacerlo.</span></li>
+</ol>
+
+<p>&nbsp;</p>
+<ul>
+<li><strong><strong>Declara el C&Oacute;NYUGE DEL GARANTE, bajo protesta de decir verdad, por su propio derecho, que:</strong></strong></li>
+</ul>
+<p>&nbsp;</p>
+<ol>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Es persona f&iacute;sica, con mayor&iacute;a de edad, con plena capacidad para celebrar el presente Contrato y cualesquiera otros documentos que se suscriban a su amparo, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes y que la Acreditante</span> <span style="font-weight: 400;">ha puesto a su disposici&oacute;n el aviso de privacidad a que se refiere la LFPDPPP, mismo que ha consentido.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Estar enterada de los t&eacute;rminos y condiciones del presente contrato y firma el presente contrato, su o sus Anexos A y cualquier otro documento que se suscriba a su amparo, en aceptaci&oacute;n del o de los mismos, autorizando al efecto al Garante Prendario para dar en garant&iacute;a prendaria los Bienes Pignorados en t&eacute;rminos del presente Contrato y Anexos A.</span></li>
+</ol>
+</ol>
+
+<p>&nbsp;</p>
+<ul>
+<!--li><strong><strong>Declara el OBLIGADO SOLIDARIO, bajo protesta de decir verdad, por su propio derecho o por conducto de su(s) representante(s) legal(es), seg&uacute;n corresponda, que:</strong></strong></li>
+</ul>
+<p>&nbsp;</p>
+<ol>
+<li style="font-weight: 400;"><strong>[Persona Moral]</strong><span style="font-weight: 400;"> Es (Son) una(s) sociedad(es) constituida(s) conforme a las leyes de los Estados Unidos Mexicanos y su objeto social le(s) permite la celebraci&oacute;n del presente Contrato y dem&aacute;s documentos que se suscriban a su amparo, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes.</span></li>
+
+<li><strong>[Persona F&iacute;sica]</strong><span style="font-weight: 400;"> Es (Son) persona(s) f&iacute;sica(s), con mayor&iacute;a de edad, con plena capacidad para celebrar el presente Contrato y cualesquiera otros documentos que se suscriban a su amparo, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes y que la Acreditada</span> <span style="font-weight: 400;">ha puesto a su disposici&oacute;n el aviso de privacidad a que se refiere la LFPDPPP, mismo que ha(n) consentido.</span></li>
+
+<li style="font-weight: 400;"><strong>[Persona Moral y/o Persona F&iacute;sica]</strong><span style="font-weight: 400;"> Con el car&aacute;cter de representante(s) o apoderado(s) legal(es), respectivamente, posee(n) las facultades suficientes y necesarias para celebrar en su representaci&oacute;n el presente Contrato y dem&aacute;s documentos suscritos a su amparo, oblig&aacute;ndola(s) en los t&eacute;rminos del (de los) mismo(s), lo cual se acredita con el(los) instrumento(s) p&uacute;blico(s) se&ntilde;alado(s) en la Car&aacute;tula y/o sus Anexos A del presente Contrato, facultades que no le(s) han sido revocadas ni limitadas de forma alguna.</span></li>
+<li style="font-weight: 400;"><strong>[Persona Moral]</strong><span style="font-weight: 400;"> Su objeto social le permite la celebraci&oacute;n del presente Contrato, sus anexos y de cualesquiera otros documentos que se suscriban a su amparo en calidad de obligado solidario, por lo que la celebraci&oacute;n de los mismos, constituyen, o despu&eacute;s de su celebraci&oacute;n constituir&aacute;n, seg&uacute;n sea el caso, obligaciones v&aacute;lidas y vinculatorias para las Partes.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Para los efectos relacionados con el presente Contrato, se&ntilde;ala(n) como sus datos personales, domicilio(s) y RFC(s) los que se indican en la Car&aacute;tula y/o los Anexos A del presente Contrato.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">En virtud de las relaciones jur&iacute;dicas, corporativas, administrativas y/o de negocio que tiene(n) a esta fecha con la Acreditada, es su voluntad constituirse en este acto en obligado(s) solidario(s) frente a la Acreditante respecto del cumplimiento de todas y cada una de las obligaciones que se deriven del presente Contrato y dem&aacute;s documentos suscritos a su amparo, a cargo de la Acreditada, con la solidaridad que establecen los art&iacute;culos 1987, 1988 y 1989 del CCF, mismos que constituir&aacute;n obligaciones v&aacute;lidas y exigibles en su contra de conformidad con sus respectivos t&eacute;rminos. Esta responsabilidad solidaria incluye, sin limitar, el pago de los intereses, gastos, comisiones y dem&aacute;s accesorios que se originen a favor de la Acreditante.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Cuenta(n) con la capacidad econ&oacute;mica para hacer frente a las obligaciones contra&iacute;das en el presente Contrato, sus Anexos A y cualesquiera otros documentos que se suscriban a su amparo, lo cual se acredita y refleja mediante la informaci&oacute;n de negocios y su relaci&oacute;n patrimonial entregada a la Acreditante debidamente firmada, a la fecha de firma de este Contrato.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">La suscripci&oacute;n del presente Contrato, sus Anexos A y cualesquiera otros documentos que se suscriban a su amparo no contravienen ni resultan en conflicto con: (i) sus estatutos; (ii) cualquier contrato o acto jur&iacute;dico que tenga celebrado; o (iii) con la legislaci&oacute;n, reglamentaci&oacute;n o normativa, federal, estatal o municipal vigente de los Estados Unidos Mexicanos que por cualquier causa le pudiese resultar aplicable, respectivamente.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">No tiene(n) obligaci&oacute;n contingente alguna que, de resultar exigible, pudiere tener un efecto adverso en su situaci&oacute;n financiera o en sus operaciones y que pudiere representar un riesgo en el cumplimiento de las obligaciones que contrae(n) y contraiga(n) en el presente Contrato, sus Anexos A y cualesquiera otros documentos suscritos a su amparo.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">No existe ning&uacute;n contrato, convenio, documento, disposici&oacute;n gubernamental, decreto, sentencia u orden que limite, grave o restrinja el dominio de sus bienes o derechos, salvo los que ha(n) hecho del conocimiento de la Acreditada, o que afecte su condici&oacute;n financiera y/o econ&oacute;mica que pudiere representar un riesgo en el cumplimiento de las obligaciones que contraen y contraiga(n) con el presente Contrato, sus anexos y cualesquiera otros documentos suscritos a su amparo.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Manifiesta(n) y hace(n) constar que, a la firma del presente Contrato, ha(n) recibido un ejemplar en original del mismo, acompa&ntilde;ado de todos sus anexos y de los dem&aacute;s documentos suscritos a su amparo, los cuales forman parte integrante del mismo.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Manifiesta(n) bajo protesta de decir verdad que sus datos proporcionados a la Acreditante y los asentados en este Contrato, Car&aacute;tula y Anexos A son verdaderos; que su actividad empresarial consiste en desarrollar actividades l&iacute;citas, generadoras de los recursos necesarios para cumplir con todo o parte de sus obligaciones de pago derivadas del presente Contrato. Manifestando, asimismo, que las cantidades recibidas, son destinadas a fines permitidos por la ley, y que de acuerdo con su leal saber y entender, no est&aacute; incurriendo en conductas tipificadas como delitos se&ntilde;alados en los art&iacute;culos 139 Qu&aacute;ter y 400 Bis del CPF, mismos que conoce a la letra.</span></li>
+</ol-->
+
+
+<p><strong>Declaran las Partes bajo protesta de decir verdad, por conducto de sus representantes o apoderados legales o por su propio derecho, seg&uacute;n corresponda, que:</strong></p>
+
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Para efectos del presente Contrato, en lo sucesivo, a la Acreditante, a la Acreditada y, en su caso, el C&oacute;nyuge del Garante y al Obligado Solidario, se les podr&aacute; denominar en forma conjunta como las Partes y de forma indistinta como la Parte.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Entienden la naturaleza financiera y mercantil de la presente operaci&oacute;n, por lo que con fundamento en el art&iacute;culo 78 (setenta y ocho) del C&oacute;digo de Comercio, se obligan en la manera y t&eacute;rminos establecidos en el presente Contrato.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Los Anexos A pueden ser suscritos en D&oacute;lares o en Pesos.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Los Anexos A qu&eacute; se suscriban forman parte integrante del presente Contrato.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Sus fines les permiten y autorizan la celebraci&oacute;n del presente Contrato y de cada una de las obligaciones asumidas conforme al mismo, as&iacute; como de los dem&aacute;s documentos suscritos o a ser suscritos a su amparo, por lo que su suscripci&oacute;n constituye un compromiso corporativo v&aacute;lido y vinculante en todas sus partes.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Los recursos econ&oacute;micos para el cumplimiento de las obligaciones que contraen en t&eacute;rminos del presente Contrato, provienen y provendr&aacute;n de fuentes l&iacute;citas.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Comparecen a la celebraci&oacute;n del presente Contrato, as&iacute; como de los dem&aacute;s documentos suscritos o a ser suscritos a su amparo, sin encontrarse aquejadas por dolo, violencia, error o cualquier otro vicio de la voluntad que pudiere limitar en todo o en parte su capacidad de obligarse.</span></li>
+</ol>
+
+<p><span style="font-weight: 400;">Conformes las Partes en las declaraciones que anteceden, celebran este </span><strong>Contrato Maestro de Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria Sin Transmisi&oacute;n de la Posesi&oacute;n</strong><span style="font-weight: 400;">, en t&eacute;rminos de las siguientes:</span></p>
+
+<p><strong>C L &Aacute; U S U L A S:</strong></p>
+
+<p><strong>PRIMERA. DEFINICIONES. </strong><span style="font-weight: 400;">Para efectos de este Contrato, los siguientes t&eacute;rminos, ya sea que se encuentren con o sin may&uacute;sculas, con o sin negritas, en plural o singular, tendr&aacute;n el mismo significado que a continuaci&oacute;n se se&ntilde;ala, a menos que expresamente se indique lo contrario:</span></p>
+
+<ol>
+<li style="font-weight: 400;"><strong>Anexo A: </strong><span style="font-weight: 400;">El documento suscrito por la Acreditante y la Acreditada</span> <span style="font-weight: 400;">(y, en su caso, por el C&oacute;nyuge del Garante y el Obligado Solidario)</span> <span style="font-weight: 400;">que, de tiempo en tiempo, suscriban las Partes al amparo del presente Contrato, en el que se especifican las Condiciones Especiales del Cr&eacute;dito que regir&aacute;n durante la vigencia de este Contrato y el Anexo A respectivo, el que forma parte integrante del mismo, sujet&aacute;ndose a todas las condiciones establecidas en dicho Contrato, como si a la letra se insertaren. Dichos Anexos A ser&aacute;n numerados en forma progresiva y debidamente firmados por las Partes, formar&aacute;n parte integrante del presente Contrato. Cada Anexo A qu&eacute; se suscriba, constituir&aacute; una disposici&oacute;n independiente y por separado de los dem&aacute;s Anexos A.</span></li>
+
+<li><strong><strong>Anexo B: </strong><span style="font-weight: 400;">Las facturas, certificados y/o los contratos de compraventa con los cuales se acredita la propiedad de los Bienes Pignorados, descritos en las declaraciones de la Acreditada.</span></strong></li>
+<li><strong><strong>Bienes Pignorados: </strong><span style="font-weight: 400;">Los</span> <span style="font-weight: 400;">bienes y sus accesorios, que son otorgados en garant&iacute;a por la Acreditada y, en su caso, el C&oacute;nyuge del Garante,</span> <span style="font-weight: 400;">a la</span> <span style="font-weight: 400;">Acreditante,</span> <span style="font-weight: 400;">con objeto de garantizarle el cumplimiento puntual y oportuno de todas sus obligaciones de pago asumidas en este Contrato y su o sus Anexos A, respectivamente.</span></strong></li>
+
+
+<li style="font-weight: 400;"><strong>Car&aacute;tula</strong><span style="font-weight: 400;">:</span> <span style="font-weight: 400;">El documento en el que se contienen y especifican el nombre, los datos generales y corporativos, personalidad y/o datos del o los representantes legales de la Acreditante, la Acreditada, y, en su caso, el C&oacute;nyuge del Garante y del Obligado Solidario.</span></li>
+
+
+<li><strong><strong>CPF: </strong><span style="font-weight: 400;">C&oacute;digo Penal Federal.</span></strong></li>
+
+<li style="font-weight: 400;"><strong>D&iacute;a H&aacute;bil</strong><span style="font-weight: 400;">: En operaciones en Pesos, significa cualquier d&iacute;a del a&ntilde;o, excepto s&aacute;bados y domingos, en que los Bancos en la Ciudad de M&eacute;xico de los Estados Unidos Mexicanos est&eacute;n abiertos al p&uacute;blico para la realizaci&oacute;n de operaciones bancarias y no est&eacute;n autorizados para cerrar. En las operaciones en D&oacute;lares, ser&aacute; cualquier d&iacute;a del a&ntilde;o, excepto s&aacute;bados y domingos, en que los Bancos en la Ciudad de M&eacute;xico, de los Estados Unidos Mexicanos y en la Ciudad de Nueva York, Nueva York, Estados Unidos de Am&eacute;rica est&eacute;n abiertos al p&uacute;blico para realizaci&oacute;n de operaciones bancarias en D&oacute;lares de los Estados Unidos de Am&eacute;rica y no est&eacute;n autorizados para cerrar.</span></li>
+
+<li><strong><strong>D&oacute;lares: </strong><span style="font-weight: 400;">La moneda de curso legal en los Estados Unidos de Am&eacute;rica.</span></strong></li>
+
+<li><strong><strong>Intereses Moratorios:</strong><span style="font-weight: 400;"> La cantidad que la Acreditada se obliga a pagar a la Acreditante, en caso de incumplir en forma total y oportuna con los Pagos Parciales y/o cualesquier pagos consignados en este Contrato y en el o los Anexos A, calculados a raz&oacute;n de la Tasa de Inter&eacute;s Aplicable pactada en este Contrato y en el o los Anexos A, m&aacute;s el IVA correspondiente.</span></strong></li>
+
+<li><strong><strong>Intereses Ordinarios:</strong><span style="font-weight: 400;"> La cantidad que la Acreditada se obliga a pagar a la Acreditante, calculada a raz&oacute;n de la Tasa de Inter&eacute;s Aplicable pactada en cada Anexo A, m&aacute;s el IVA correspondiente.</span></strong></li>
+
+<li><strong><strong>IVA:</strong><span style="font-weight: 400;"> El Impuesto al Valor Agregado.</span></strong></li>
+
+<li><strong><strong>LFPDPPP: </strong><span style="font-weight: 400;">La Ley Federal de Protecci&oacute;n de Datos Personales en Posesi&oacute;n de los Particulares.</span></strong></li>
+
+<li><strong><strong>LGTOC:</strong><span style="font-weight: 400;"> Ley General de T&iacute;tulos y Operaciones de Cr&eacute;dito.</span></strong></li>
+
+<li><strong><strong>Pago Anticipado:</strong><span style="font-weight: 400;"> La o las cantidades que la Acreditada pagar&aacute; a la Acreditante cuando se d&eacute; por vencido anticipadamente este Contrato y el o los Anexos A, m&aacute;s el IVA correspondiente.</span></strong></li>
+
+<li style="font-weight: 400;"><strong>Pagos Parciales:</strong><span style="font-weight: 400;"> Las cantidades que la Acreditada pagar&aacute;</span> <span style="font-weight: 400;">la Acreditante</span> <span style="font-weight: 400;">en forma peri&oacute;dica de conformidad con la periodicidad establecida en la Tabla de Amortizaci&oacute;n contenida en cada Anexo A, m&aacute;s sus accesorios.</span></li>
+
+<li><strong><strong>Pena Convencional:</strong><span style="font-weight: 400;"> La cantidad que la Acreditada pagar&aacute; a la Acreditante, por incumplimiento de obligaciones de hacer, diversas a las de pago, asumidas en este Contrato y el o los Anexos A correspondiente, m&aacute;s el IVA correspondiente, as&iacute; como por las cancelaciones de los mismos.</span></strong></li>
+
+<li><strong><strong>Pesos:</strong><span style="font-weight: 400;"> La moneda de curso legal en los Estados Unidos Mexicanos.</span></strong></li>
+
+<li><strong><strong>Tasa de Inter&eacute;s Aplicable: </strong><span style="font-weight: 400;">La tasa fija referida en t&eacute;rminos porcentuales anuales en cada Anexo A, respectivamente.</span></strong></li>
+</ol>
+
+<p><strong>SEGUNDA</strong><span style="font-weight: 400;">. </span><strong>Objeto y Monto del Cr&eacute;dito</strong><strong>.</strong><span style="font-weight: 400;"> De acuerdo a los t&eacute;rminos del presente Contrato, la Acreditante apertura a la Acreditada un cr&eacute;dito bajo la modalidad de Simple, hasta por la cantidad que se se&ntilde;ala en el o los Anexos A de este Contrato, bajo el rubro </span><strong>Monto del Cr&eacute;dito</strong><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Dentro del Monto del Cr&eacute;dito no quedan comprendidos los intereses, comisiones, gastos y dem&aacute;s accesorios financieros que deba pagar la Acreditada a la Acreditante, en t&eacute;rminos de este Contrato y el o los Anexos A.</span></p>
+<p><span style="font-weight: 400;">La Acreditada, con la firma de este Contrato y del o de los Anexos A, se da por recibida a su m&aacute;s entera conformidad del Monto del Cr&eacute;dito, entendi&eacute;ndose extendido en tal virtud y a favor de la Acreditante el recibo m&aacute;s amplio que conforme a derecho corresponde, por lo que renuncia a cualquier derecho o acci&oacute;n legal que ejercer en contra de la Acreditante, oblig&aacute;ndose a sacarla en paz y a salvo.</span></p>
+<p><span style="font-weight: 400;">El cr&eacute;dito otorgado en t&eacute;rminos de la presente Cl&aacute;usula, se sujetar&aacute; a los t&eacute;rminos espec&iacute;ficos y/o condiciones adicionales que la Acreditada y la Acreditante pacten en el o los Anexos A. En caso de existir un conflicto entre lo previsto por este Contrato y el los Anexos A, prevalecer&aacute; lo previsto en estos &uacute;ltimos, seg&uacute;n corresponda.</span></p>
+
+<p><strong>TERCERA. Destino, Disposici&oacute;n y Entrega del Monto del Cr&eacute;dito.</strong><span style="font-weight: 400;"> La Acreditada se obliga a destinar el Monto del Cr&eacute;dito en una actividad l&iacute;cita, es decir para lo se&ntilde;alado en el o los Anexos A, bajo el rubro </span><strong>Destino Del Cr&eacute;dito</strong><span style="font-weight: 400;">. La</span> <span style="font-weight: 400;">Acreditada</span> <span style="font-weight: 400;">podr&aacute; destinar el importe del </span><strong>Monto del Cr&eacute;dito,</strong><span style="font-weight: 400;"> para la</span> <span style="font-weight: 400;">Adquisici&oacute;n de Bienes,</span> <span style="font-weight: 400;">dependiendo de lo pactado por ambas Partes en el Anexo A, correspondiente.</span></p>
+<p><span style="font-weight: 400;">La Acreditada dispondr&aacute; del Monto del Cr&eacute;dito en una sola disposici&oacute;n, misma que quedar&aacute; consignada mediante el otorgamiento del o de los Anexos A, suscrito al amparo del presente Contrato.</span></p>
+<p><span style="font-weight: 400;">Si por causas ajenas a la Acreditante, no pudiera realizar la entrega de los recursos en los t&eacute;rminos y condiciones convenidas, la entrega se realizar&aacute; sujet&aacute;ndose a las posibilidades y disponibilidades de la Acreditante.</span></p>
+<p><span style="font-weight: 400;">Con la firma de este Contrato, la Acreditada</span> <span style="font-weight: 400;">otorga y confiere a favor de la Acreditante, una comisión aplicada a actos de comercio a t&iacute;tulo gratuito tan amplio como en derecho sea necesario, para que la Acreditante por cuenta y orden de la Acreditada, con cargo al </span><strong>Monto del Cr&eacute;dito</strong><span style="font-weight: 400;"> y hasta donde el mismo alcance, realice directamente el pago, mediante transferencia bancaria o cheque respectivo, a los </span><strong>Proveedores </strong><span style="font-weight: 400;">para la adquisici&oacute;n de los Bienes Pignorados especificados por la Acreditada</span> <span style="font-weight: 400;">en el o los Anexos A</span> <span style="font-weight: 400;">contra la entrega de la factura o CFDI original del Bien Pignorado.</span></p>
+<p><span style="font-weight: 400;">Con la firma de este Contrato y de los Anexos A,</span> <span style="font-weight: 400;">la Acreditada se da y dar&aacute; por recibida a su m&aacute;s entera conformidad del </span><strong>Monto del Cr&eacute;dito </strong><span style="font-weight: 400;">y extiende en favor de la Acreditante el recibo m&aacute;s amplio que conforme a derecho corresponde del </span><strong>Monto del Cr&eacute;dito</strong><span style="font-weight: 400;"> que se especifica en el o los Anexos A, sin reservarse derecho o acci&oacute;n legal que ejercer en contra de la Acreditante por el cumplimiento de la comisión otorgada en el p&aacute;rrafo inmediato anterior, oblig&aacute;ndose a sacarla en paz y a salvo de cualquier responsabilidad que se pudiera fincar en su contra por el cumplimiento de dicha comisión.</span></p>
+<p><span style="font-weight: 400;">La Acreditante</span> <span style="font-weight: 400;">no ser&aacute; responsable por error u omisi&oacute;n en la descripci&oacute;n de o los bienes</span> <span style="font-weight: 400;">adquiridos o en los pedidos u &oacute;rdenes de compra que se expidan, por parte de la Acreditada.</span></p>
+
+<p></p>
+<p></p>
+
+<p><strong>CUARTA. Plazo. </strong><span style="font-weight: 400;">El inicio del presente cr&eacute;dito ser&aacute; a partir de la fecha que se establezca en cada Anexo A, del presente Contrato bajo el rubro </span><strong>Fecha de inicio del Cr&eacute;dito</strong><span style="font-weight: 400;">, estando vigente por el plazo forzoso se&ntilde;alado en el o los Anexos A, el cual concluye en la </span><strong>Fecha de Vencimiento</strong><span style="font-weight: 400;"> que se establece en dicho Anexo A. Asimismo, las partes convienen en que la vigencia del presente Contrato y del o de los Anexos A correspondientes, podr&aacute; ser prorrogada, previo acuerdo de ambas partes.</span></p>
+<p><span style="font-weight: 400;">E</span><span style="font-weight: 400;">l </span><strong>Plazo</strong><span style="font-weight: 400;"> previsto en el o los Anexos A se establece en beneficio de la Acreditante</span><strong>,</strong><span style="font-weight: 400;"> por lo que la Acreditada pagar&aacute; el </span><strong>Monto del Cr&eacute;dito </strong><span style="font-weight: 400;">convenido; en el entendido de que, si por cualquier raz&oacute;n la Acreditada prepaga el </span><strong>Monto del Cr&eacute;dito </strong><span style="font-weight: 400;">antes del vencimiento del Plazo convenido, la Acreditada estar&aacute; obligada a pagar &iacute;ntegramente el saldo insoluto vigente del </span><strong>Monto del Cr&eacute;dito</strong><span style="font-weight: 400;">, m&aacute;s la carga financiera devengada a la fecha del </span><strong>Pago Anticipado</strong><span style="font-weight: 400;">, establecida en el o los Anexos A, m&aacute;s su respectivo</span> <span style="font-weight: 400;">Impuesto al Valor Agregado </span><strong>(IVA)</strong><span style="font-weight: 400;">, as&iacute; como cualquier otro adeudo derivado de este Contrato y el o los Anexos A.</span></p>
+
+<p><strong>QUINTA. Forma y Lugar de Pago.</strong><span style="font-weight: 400;"> La Acreditada pagar&aacute; a la Acreditante, el Monto del Cr&eacute;dito m&aacute;s sus accesorios financieros, mediante Pagos Parciales en la forma, cantidades, fechas y lugar de pago se&ntilde;alados en el o los Anexos A, sin deducci&oacute;n por y libres de cualesquier impuestos.</span></p>
+<p><span style="font-weight: 400;">Los Pagos Parciales se compondr&aacute;n de:</span></p>
+
+<ol>
+<li><strong><span style="font-weight: 400;">Los Pagos Parciales que se establecen en la Tabla de Amortizaci&oacute;n del o los Anexos A, m&aacute;s</span></strong></li>
+
+<li><span style="font-weight: 400;">Los Intereses Ordinarios calculados sobre el saldo insoluto del Monto del Cr&eacute;dito, mismos que no podr&aacute;n ser cobrados por anticipado, m&aacute;s</span></li>
+
+<li><span style="font-weight: 400;">Cualquier otro accesorio que sea exigible conforme a este Contrato y su o sus Anexos A, as&iacute; como cualquier otro pago derivado de dichos documentos y de aquellos pagos incluidos en los estados de cuenta que emita la Acreditante.</span></li>
+</ol>
+
+<p><span style="font-weight: 400;">Los Pagos Parciales del Monto del Cr&eacute;dito, ser&aacute;n pagados por la Acreditada a la Acreditante en la moneda que se indica en el o los Anexos A de este Contrato, bajo el rubro Moneda.</span></p>
+<p><span style="font-weight: 400;">Los Intereses Ordinarios empezar&aacute;n a devengarse a partir de la fecha de firma del o de los Anexos A, y hasta la fecha del pago total del mismo, y ser&aacute;n calculados en forma anual sobre el saldo insoluto de la disposici&oacute;n pendiente de pagarse al d&iacute;a en que se inicie el respectivo Periodo de C&aacute;lculo de intereses, referido en el o los Anexos A, multiplicado por la Tasa de Inter&eacute;s Aplicable que se indique en el Anexo A respectivo, calculada sobre la base de un a&ntilde;o de 360 (trescientos sesenta) d&iacute;as, los cuales ser&aacute;n pagados por la Acreditada en su totalidad y en las fechas en que deban realizarse los Pagos Parciales, conforme a lo que para tales efectos se establece en la Tabla de Amortizaci&oacute;n del o de los Anexos A, a excepci&oacute;n del primer periodo que podr&aacute; ser irregular y comenzar&aacute; a partir de la fecha de firma del o de los Anexos A, y concluir&aacute; en la fecha de pago del Pago Parcial n&uacute;mero 1 (uno) que se establece en la Tabla de Amortizaci&oacute;n del o de los Anexos A.</span></p>
+<p><span style="font-weight: 400;">Los pagos efectuados por la Acreditada podr&aacute;n ser aplicados por la Acreditante, a discreci&oacute;n de esta &uacute;ltima, en el orden siguiente: impuestos, comisiones, gastos, Intereses Moratorios, Intereses Ordinarios, Pagos Parciales vencidos y Pagos Parciales por vencer.</span></p>
+<p><span style="font-weight: 400;">En caso de que la Acreditada deba hacer retenciones sobre el pago del Monto del Cr&eacute;dito, por cualquier concepto, se obliga a pagar a la Acreditante, las cantidades adicionales que se requieran a efecto de que esta &uacute;ltima, reciba la cantidad &iacute;ntegra que debiera recibir si no se hubiera realizado la retenci&oacute;n.</span></p>
+<p><span style="font-weight: 400;">Los pagos de capital, intereses e IVA de intereses los realizar&aacute; la Acreditada mediante dep&oacute;sitos o transferencias en la cuenta bancaria a nombre de la Acreditante.</span></p>
+<p><span style="font-weight: 400;">Los pagos anticipados son permitidos sin penalizaci&oacute;n, siempre y cuando la Acreditada est&eacute; al corriente en sus pagos parciales de conformidad con el presente Contrato y cada Anexo A.</span></p>
+<p><span style="font-weight: 400;">Si un d&iacute;a de pago se&ntilde;alado en la Tabla de Amortizaci&oacute;n del o de los Anexos A es D&iacute;a Inh&aacute;bil, la Acreditada realizar&aacute; el pago el d&iacute;a h&aacute;bil inmediato siguiente.</span></p>
+<p><span style="font-weight: 400;">La Acreditante se reserva el derecho de cambiar el lugar de pago para lo cual notificar&aacute; por escrito, v&iacute;a fax o cualquier medio electr&oacute;nico a la Acreditada sobre dicho cambio, con cuando menos 10 (diez) d&iacute;as naturales de anticipaci&oacute;n.</span></p>
+<p><span style="font-weight: 400;">Las partes acuerdan que el pago de los Pagos Parciales se acreditar&aacute; de acuerdo al medio de pago que utilice la Acreditada, de la manera siguiente:</span></p>
+
+
+<row>
+	<div class="col-lg-8"-->
+		<div class="card text-center" style="width: 52rem;">
+			<div class="card-header">
+				<h5 class="card-title">Formas de acreditación</h5>
+			</div>
+			<div class="card-body">
+				<table class="table table-hover" style="width: unset;">
+							<th scope="col">MEDIOS DE PAGO</th>
+							<th scope="col">FECHAS DE ACREDITAMIENTO DEL PAGO</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>Cheque del mismo banco donde la Acreditante tiene aperturada la cuenta de pago</strong></td>
+							<td>Se acreditará el mismo día.</td>
+						</tr>
+						<tr>
+							<td><strong>Cheque de otro banco</strong></td>
+							<td>Si se deposita después de las 16:00 horas, se acreditará a más tardar el segundo día hábil siguiente.</td>
+						</tr>
+						<tr>
+							<td><strong>Transferencias electr&oacute;nicas de fondos</strong></td>
+							<td>A través del Sistema de Pagos Electrónicos Interbancarios (SPEI), se acreditará a más tardar el día hábil siguiente al que se ordene la transferencia.</td>
+						</tr>
+						<!--tr>
+							<td>Autorización acreditada:</td>
+							<td colspan="6">Los datos personales pueden utilizarse para mercadeo</td>
+							<td><input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1"></td>
+
+						</tr-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</row>
+
+<p style="text-align: left;">&nbsp;</p>
+
+<p><strong>SEXTA</strong><span style="font-weight: 400;">. </span><strong>Pagar&eacute;(s). </strong><span style="font-weight: 400;">En la fecha de disposici&oacute;n del Monto del Cr&eacute;dito en cada Anexo(s) A suscrito(s), la Acreditada y, en su caso, el Obligado Solidario como aval se obligan a suscribir un Pagar&eacute; a la orden de la Acreditante, por la totalidad del Monto del Cr&eacute;dito dispuesto, el cual contendr&aacute; las caracter&iacute;sticas de los art&iacute;culos 170, 299 y dem&aacute;s aplicables de la LGTOC, y no constituir&aacute; novaci&oacute;n, modificaci&oacute;n, extinci&oacute;n o pago de las obligaciones que la Acreditada asume ante la Acreditante, por virtud del presente Contrato y del o los Anexos A.</span></p>
+<p><span style="font-weight: 400;">Dicho(s) pagar&eacute;(s) no podr&aacute;(n) tener un vencimiento posterior al Anexo A del que se desprenda, y de que la entrega del(los) mismo(s) no implica en forma alguna el pago ni recibo de los Pagos Parciales o novaci&oacute;n alguna del presente Contrato y/o sus Anexos A.</span></p>
+<p><span style="font-weight: 400;">La Acreditada faculta a la Acreditante para ceder, descontar, endosar y negociar el o los Pagar&eacute;(s) y este Contrato y el Anexo A respectivo, a&uacute;n antes de su vencimiento, sirviendo la presente como autorizaci&oacute;n expresa requerida por el art&iacute;culo 299 de la LGTOC, en cuyo caso subsistir&aacute;n las garant&iacute;as concedidas y sin que ello implique responsabilidad alguna para la Acreditante.</span></p>
+<p><span style="font-weight: 400;">Si por cualquier causa este Contrato y/o el Anexo A respectivo se rescinde o denuncia, la Acreditante podr&aacute; dar por vencido anticipadamente el o los Pagar&eacute;(s).</span></p>
+
+<p><strong>S&Eacute;PTIMA. Intereses Ordinarios</strong><span style="font-weight: 400;">. Los intereses ordinarios empezar&aacute;n a devengarse a partir de la fecha en que la Acreditante entregue los recursos del Monto del Cr&eacute;dito dispuesto a la Acreditada. Las partes convienen en que la tasa de inter&eacute;s aplicable para determinar cada Pago Parcial, a cargo de la Acreditada en t&eacute;rminos del presente Contrato y cada Anexo A, se obtendr&aacute; del resultado de aplicar la tasa que para ese efecto se estipule en cada uno de los Anexos A bajo el rubro de </span><strong>Tasa de Inter&eacute;s Aplicable</strong><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">Las partes convienen que la determinaci&oacute;n de los Pagos Parciales con su respectivo IVA, se calcular&aacute; con base al saldo insoluto del Cr&eacute;dito pactado en cada uno de los Anexos A suscritos al amparo del presente Contrato.&nbsp;</span></p>
+<p><span style="font-weight: 400;">Los Intereses Ordinarios se calcular&aacute;n sobre el saldo insoluto pendiente de pagarse, multiplicado por la </span><strong>Tasa de Inter&eacute;s Aplicable</strong><span style="font-weight: 400;"> anual que se indique en el Anexo A, dividiendo el resultado entre 360 (trescientos sesenta) d&iacute;as, y multiplicado su nuevo resultado por el n&uacute;mero de d&iacute;as efectivamente transcurridos. El primer per&iacute;odo podr&aacute; ser irregular y comprender&aacute; del d&iacute;a en que la Acreditante entregue los recursos del Monto del Cr&eacute;dito dispuesto a la Acreditada, hasta el d&iacute;a de pago del siguiente mes.</span></p>
+
+<p><strong>OCTAVA. Intereses Moratorios. </strong><span style="font-weight: 400;">La falta de pago oportuno de cualquier cantidad a que se obliga la Acreditada en el presente Contrato y sus diversos Anexos A, generar&aacute; intereses moratorios a cargo de esta &uacute;ltima, con su respectivo IVA, desde el momento del incumplimiento hasta su pago total, calculados a raz&oacute;n de multiplicar por 2 (dos) la Tasa de Inter&eacute;s Aplicable que se indique en el Anexo A de que se trate y se aplicar&aacute; sobre el capital vencido, desde la fecha en que se d&eacute; el incumplimiento hasta la fecha de su pago total, m&aacute;s el IVA correspondiente.</span></p>
+
+<p><strong>NOVENA. Comisi&oacute;n por Disposici&oacute;n. </strong><span style="font-weight: 400;">La Acreditada pagar&aacute; a la Acreditante una Comisi&oacute;n por Disposici&oacute;n cuyo porcentaje quedar&aacute; se&ntilde;alado en el o los Anexos A del presente Contrato, m&aacute;s el IVA, el cual se calcular&aacute; sobre el Monto del Cr&eacute;dito financiado o a financiar de que se trate y ser&aacute; cubierta en la fecha de firma del Anexo A que corresponda.</span></p>
+
+<p><strong>D&Eacute;CIMA. Reestructuraci&oacute;n del Cr&eacute;dito. </strong><span style="font-weight: 400;">Se cobrar&aacute; una comisi&oacute;n por reestructuraci&oacute;n del cr&eacute;dito toda vez que &eacute;sta sea solicitada por la Acreditada y autorizada por la Acreditante. Dicha comisi&oacute;n ser&aacute; por el monto fijo m&aacute;s IVA se&ntilde;alado en el Anexo A que corresponda en el apartado de </span><strong>Comisi&oacute;n por Reestructuraci&oacute;n</strong> <span style="font-weight: 400;">y ser&aacute; cubierta en la fecha de firma del Anexo A que corresponda.</span></p>
+<p><span style="font-weight: 400;">La reestructuraci&oacute;n pudiera consistir en la ampliaci&oacute;n del plazo del cr&eacute;dito o en la modificaci&oacute;n de los Pagos Parciales que se hubieren convenido en el presente Contrato y el Anexo A correspondiente.</span></p>
+
+<p><strong>D&Eacute;CIMA PRIMERA. Comisi&oacute;n por Aclaraci&oacute;n No Procedente:</strong><span style="font-weight: 400;"> El Acreditante cobrar&aacute; una comisi&oacute;n por el monto fijo m&aacute;s IVA se&ntilde;alado en el Anexo A que corresponda, en el apartado de </span><strong>Comisi&oacute;n por Aclaraci&oacute;n No Procedente</strong><span style="font-weight: 400;">, por cada solicitud de aclaraciones, inconformidades o quejas que resulte improcedente, m&aacute;s el Impuesto al Valor Agregado correspondiente.</span></p>
+<p><span style="font-weight: 400;">El Acreditante, a su entera discreci&oacute;n, podr&aacute; o no cobrar las comisiones antes mencionadas, sin que por ning&uacute;n motivo pueda cobrar cualquier otra comisi&oacute;n que no haya sido se&ntilde;alada en este Contrato.&nbsp;</span></p>
+
+<p><strong>D&Eacute;CIMA SEGUNDA. Pagos Anticipados. </strong><span style="font-weight: 400;">En caso de que la Acreditada realice pago alguno del principal del Monto del Cr&eacute;dito, con anterioridad a la fecha en que el mismo deba ser pagado de conformidad con este Contrato y la Tabla de Amortizaci&oacute;n establecida en el Anexo A respectivo, no pagar&aacute; comisi&oacute;n alguna por dicho pago anticipado, siempre y cuando est&eacute; al corriente en sus pagos parciales de conformidad con el presente Contrato, sin embargo dicho pago deber&aacute; realizarse con anterioridad a que el pago correspondiente venza y tendr&aacute; que ser por una cantidad igual o mayor al importe de un pago parcial, debiendo avisar con 30 (treinta) d&iacute;as naturales de anticipaci&oacute;n a la Acreditante.</span></p>
+
+<p><strong>D&Eacute;CIMA TERCERA. Comisi&oacute;n por Gastos de Administraci&oacute;n: </strong><span style="font-weight: 400;">Por concepto de gastos y honorarios de fedatarios y de abogados contratados por la Acreditante, correspondiente a los gastos incurridos por la celebraci&oacute;n, ratificaci&oacute;n o cumplimiento de este Contrato y cada Anexo A, as&iacute; como los derechos de inscripci&oacute;n en el Registro P&uacute;blico, el Registro &Uacute;nico de Garant&iacute;as Mobiliarias (</span><strong>RUG</strong><span style="font-weight: 400;">) y/o cualquier otro registro seg&uacute;n corresponda, se generar&aacute;n y pagan por una sola ocasi&oacute;n a la firma del Anexo A que corresponda, el monto fijo m&aacute;s IVA que se se&ntilde;ala en dicho Anexos A, en el apartado de </span><strong>Comisi&oacute;n por Gastos de Administraci&oacute;n,</strong><span style="font-weight: 400;"> los cuales autoriza la Acreditada.</span></p>
+
+<p><strong>D&Eacute;CIMA CUARTA. Denuncia. </strong><span style="font-weight: 400;">La Acreditante en t&eacute;rminos del art&iacute;culo 294 de la LGTOC, podr&aacute; en cualquier tiempo restringir el importe del Monto del Cr&eacute;dito o el Plazo para disponer de &eacute;l, o ambos a la vez, o para denunciar este Contrato en cualquier tiempo, mediante simple aviso dado a la Acreditada por escrito.</span></p>
+
+<p><strong>D&Eacute;CIMA QUINTA. Estados de Cuenta</strong><span style="font-weight: 400;">. La Acreditada podr&aacute; conocer su saldo, as&iacute; como los cargos y abonos efectuados por la Acreditante, en los estados de cuenta que esta &uacute;ltima le haga llegar o ponga a su disposici&oacute;n de forma gratuita, por v&iacute;a electr&oacute;nica, dentro de los </span><span style="font-weight: 400;">10 (diez)</span><span style="font-weight: 400;"> d&iacute;as naturales siguientes a la conclusi&oacute;n o corte de cada </span><span style="font-weight: 400;">mes</span><span style="font-weight: 400;"> que transcurra durante la vigencia de este Contrato y cada Anexo A, seg&uacute;n corresponda, en cuyo caso la Acreditada tendr&aacute; un plazo de 90 (noventa) d&iacute;as naturales para objetar dicho estado de cuenta, contados a partir de la fecha en que haya sido recibido por la Acreditada.</span></p>
+<p><span style="font-weight: 400;">No estar&aacute; obligada la Acreditante a emitir o a poner a disposici&oacute;n de la Acreditada, estados de cuenta, cuando el pago del Monto del Cr&eacute;dito se efect&uacute;e en una sola amortizaci&oacute;n.</span></p>
+
+<p><strong>D&Eacute;CIMA SEXTA. Informaci&oacute;n para la Acreditada.</strong><span style="font-weight: 400;"> La Acreditada, para cualquier duda, aclaraci&oacute;n, inconformidad o queja, relacionada con la operaci&oacute;n contratada, deber&aacute; dirigirse al domicilio de la Acreditante</span> <span style="font-weight: 400;">en</span> <span style="font-weight: 400;">d&iacute;as y horas h&aacute;biles, en</span> <span style="font-weight: 400;">un horario de 9:00 a 18:00 horas; o comunicarse al tel&eacute;fono {{telefonos_acreditante}} o al correo electr&oacute;nico: {{correo_acreditante}}.</span></a></p>
+
+<p><strong>D&Eacute;CIMA S&Eacute;PTIMA. Prenda Sin Transmisi&oacute;n De Posesi&oacute;n.</strong><span style="font-weight: 400;"> La Acreditada constituye a favor de la Acreditante PRENDA SIN TRANSMISI&Oacute;N DE POSESI&Oacute;N sobre los Bienes Pignorados de su propiedad, descritos en cada Anexo A, que corresponda, con objeto de garantizarle el exacto y puntual cumplimiento de todas las obligaciones de pago consignadas en el presente Contrato, sus Anexos A y el Pagar&eacute; suscritos a su amparo, as&iacute; como todas aquellas que puedan resultar de dichos instrumentos, entendi&eacute;ndose como tales, el pago del capital, intereses ordinarios, comisiones, gastos, penas y los gastos incurridos durante la vigencia de los mismos, as&iacute; como los originados en el proceso de ejecuci&oacute;n extrajudicial o judicial (en lo sucesivo las &ldquo;</span><strong>Obligaciones Garantizadas</strong><span style="font-weight: 400;">&rdquo;).</span></p>
+
+<p><span style="font-weight: 400;">La prenda sobre los Bienes Pignorados, la otorga la Acreditada a la Acreditante, de conformidad con lo dispuesto en los art&iacute;culos 346, 347, 355 (en lo que le sea aplicable) y 356 de la LGTOC.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditada en este acto hace entrega y cede en garant&iacute;a (mediante la leyenda de cesi&oacute;n respectiva), a la Acreditante, el original de las facturas de los Bienes Pignorados, quien las conservar&aacute; en su poder, las cuales entregar&aacute; y/o devolver&aacute; a la Acreditada hasta que todas y cada una de las Obligaciones Garantizadas sean cumplidas a plena satisfacci&oacute;n de la Acreditante.</span></p>
+
+<p><span style="font-weight: 400;">De conformidad con la fracci&oacute;n V del art&iacute;culo 355 de la LGTOC, ser&aacute;n parte de la prenda constituida en t&eacute;rminos del presente Contrato, los bienes o derechos que la Acreditada reciba o tenga derecho a recibir, en pago por la enajenaci&oacute;n a terceros de los Bienes Pignorados o como indemnizaci&oacute;n en caso de da&ntilde;os o destrucci&oacute;n de dichos bienes.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditada reconoce que esta prenda constituye una garant&iacute;a en </span><span style="font-weight: 400;">PRIMER LUGAR Y GRADO </span><span style="font-weight: 400;">en favor de la Acreditante, para el cumplimiento de las Obligaciones Garantizadas, y todas aquellas que puedan resultar de los documentos donde se consignan, y que dicha garant&iacute;a no se ver&aacute; afectada por ninguna otra garant&iacute;a otorgada actualmente o en el futuro en favor de la Acreditante, en relaci&oacute;n con el cumplimiento de todas las Obligaciones Garantizadas, ni por cualquier modificaci&oacute;n de los documentos donde se consignan, resultante de cualquier dispensa, modificaci&oacute;n, reducci&oacute;n o espera que la Acreditante pudiera llegar a otorgar en relaci&oacute;n con su cumplimiento.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditada conviene que, para efecto de lo establecido en el art&iacute;culo 357 de la LGTOC, los Bienes Pignorados se conservar&aacute;n en todo momento en posesi&oacute;n de la Acreditada, en su domicilio indicado en el presente Contrato y a plena disposici&oacute;n de la</span> <span style="font-weight: 400;">Acreditante, pudiendo hacer uso de ellos, para cuyo efecto, se obliga a conservarlos en buenas condiciones, respondiendo a la Acreditante, de los deterioros y perjuicios que sufran por su culpa o negligencia; y a no utilizarlos con un prop&oacute;sito diverso al que su naturaleza lo permita, siendo por cuenta de la Acreditada, los gastos necesarios para la debida conservaci&oacute;n, reparaci&oacute;n y administraci&oacute;n de los Bienes Pignorados.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditada s&oacute;lo podr&aacute; vender, transmitir y/o enajenar los Bienes Pignorados, si cuenta con autorizaci&oacute;n previa y por escrito de la Acreditante, en la cual &eacute;sta determinar&aacute; la contraprestaci&oacute;n m&iacute;nima que deber&aacute; recibirse por la venta de los Bienes Pignorados.</span></p>
+
+<p><span style="font-weight: 400;">Adicionalmente, para efectos de lo se&ntilde;alado en el p&aacute;rrafo inmediato anterior y, siempre y cuando la Acreditante haya autorizado, sin estar obligada a ello, la venta, transmisi&oacute;n y/o enajenaci&oacute;n de los Bienes Pignorados, la Acreditada deber&aacute;n hacer del conocimiento de la Acreditante, de forma previa: (i) las caracter&iacute;sticas, o categor&iacute;as que permitan identificar a la o las personas, o a estas &uacute;ltimas de manera espec&iacute;fica, a las que se pretendan realizar la venta, transmisi&oacute;n y/o enajenaci&oacute;n de los Bienes Pignorados; (ii) el destino que dar&aacute;n al dinero, bienes o derechos que reciban en pago; y (iii) la informaci&oacute;n necesaria y que requiera la Acreditante sobre la venta, transmisi&oacute;n y/o enajenaci&oacute;n de los Bienes Pignorados.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditante, tiene el derecho de exigir a la Acreditada otro u otros bienes en prenda, seg&uacute;n sea necesario para cubrir el monto de las Obligaciones Garantizadas, o el pago de las mismas, a&uacute;n antes del plazo convenido, si los Bienes Pignorados se pierden o deterioran en exceso, de acuerdo con la inspecci&oacute;n que realice el personal designado por la Acreditante a los Bienes Pignorados. En tal virtud, la Acreditada permitir&aacute; a la Acreditante la inspecci&oacute;n de dichos bienes, a efecto de determinar el estado de conservaci&oacute;n general de los mismos.</span></p>
+
+<p><span style="font-weight: 400;">En la fecha de firma del presente Contrato, la Acreditada y la Acreditante, acuerdan en determinar a los Bienes Pignorados, el valor que se se&ntilde;ala en el o los Anexos A. En el entendido, de que si el valor de los mismos disminuye de manera que no baste para cubrir el importe de las Obligaciones Garantizadas y un 50% (cincuenta por ciento) m&aacute;s, o con previo consentimiento por escrito de la Acreditante son vendidos, la Acreditada se obliga a constituir prenda adicional o restituir la misma, con otro bien de su propiedad de la misma especie y calidad, con objeto de que mientras subsistan insolutas las Obligaciones Garantizadas, su valor no sea inferior al importe insoluto de las Obligaciones Garantizadas. En caso de que la Acreditada no cumpla con lo anterior, la Acreditante podr&aacute; exigir el pago de las Obligaciones Garantizadas, a&uacute;n antes del plazo convenido.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditante s&oacute;lo autorizar&aacute; la venta y/o enajenaci&oacute;n de los Bienes Pignorados, previa propuesta que le haga la Acreditada, sobre el o los bienes que sustituir&aacute;n al o a los que sean vendidos, los cuales, deber&aacute;n ser de la misma especie y calidad.</span></p>
+
+<p><span style="font-weight: 400;">Con el objeto de que se determine el valor de los Bienes Pignorados, su conservaci&oacute;n y deterioro, las partes que suscriben el presente contrato, convienen en forma expresa en designar como perito valuador al fabricante del bien o los bienes o al Lic. Ra&uacute;l Valencia Del Toro, Corredor P&uacute;blico No. 68 de la plaza de la Ciudad de M&eacute;xico y en caso de que este no pudiere hacerlo, a la Lic. Cecilia Arredondo Ramos, Corredor P&uacute;blico No. 41 de la plaza de la Ciudad de M&eacute;xico, y sujetarse al dictamen que rinda cualquiera de estos, de conformidad con los art&iacute;culos 361, 362 y 363 de la LGTOC.</span></p>
+
+<p></p>
+<p></p>
+
+<p><strong>D&Eacute;CIMA OCTAVA</strong><span style="font-weight: 400;">. </span><strong>Pena Convencional.</strong><span style="font-weight: 400;"> Las Partes convienen que en caso de incumplimiento de las obligaciones de hacer o no hacer a cargo de la Acreditada y/o cualesquiera de las causas de vencimiento anticipado se&ntilde;aladas en este Contrato, esta pagar&aacute; a la Acreditante por cada ocasi&oacute;n en que dicho incumplimiento se presente,</span> <span style="font-weight: 400;">una pena convencional, por la cantidad que para tal efecto se se&ntilde;ala en el o los Anexos A de este Contrato, bajo el rubro </span><strong>Pena Convencional </strong><span style="font-weight: 400;">m&aacute;s el IVA correspondiente, adem&aacute;s de cualesquiera otras cantidades que en su momento sean adeudadas a la Acreditante</span><strong>.</strong></p>
+
+<p><strong>D&Eacute;CIMA NOVENA. Gastos.</strong><span style="font-weight: 400;"> La Acreditada pagar&aacute; los gastos derivados de la celebraci&oacute;n, cumplimiento y ejecuci&oacute;n de este Contrato, el o los Anexos A y Pagar&eacute;, incluyendo los siguientes que se enumeran enunciativa y no limitativamente:</span></p>
+
+<ol>
+<li><strong>a)</strong><span style="font-weight: 400;"> Gastos y honorarios de fedatarios y/o de abogados contratados por la Acreditante incurridos por la elaboraci&oacute;n, celebraci&oacute;n, cumplimiento, modificaci&oacute;n o ratificaci&oacute;n de este Contrato y el o los Anexos A, as&iacute; como los derechos de inscripci&oacute;n en el Registro P&uacute;blico correspondiente, siempre y cuando sea aplicable;&nbsp;</span></li>
+<li><strong>b)</strong><span style="font-weight: 400;"> Gastos y honorarios de abogados u otras personas para el cobro judicial de los adeudos a cargo de la Acreditada, derivados de este Contrato, el o los Anexos A y Pagar&eacute;; y</span></li>
+<li><strong>c)</strong><span style="font-weight: 400;"> El pago equivalente al monto se&ntilde;alado en el o los Anexos A m&aacute;s IVA, por cada Gesti&oacute;n Extrajudicial que la Acreditante realice para el cobro del monto adeudado.</span></li>
+</ol>
+<p><span style="font-weight: 400;">Cualquier cantidad que por concepto de gasto sea pagada por la Acreditante, le deber&aacute; ser reembolsada por la Acreditada, dentro de los 2 (dos) d&iacute;as h&aacute;biles siguientes a la fecha en que la Acreditante le requiera el pago, en caso de que la Acreditada no pague a la Acreditante, se generar&aacute;n intereses moratorios conforme a lo establecido en la Cl&aacute;usula Octava del presente Contrato.</span></p>
+
+<p><strong>VIG&Eacute;SIMA.</strong> <strong>Seguros</strong><span style="font-weight: 400;">. Las Partes est&aacute;n de acuerdo en que ser&aacute;n por cuenta de la Acreditada los riesgos por p&eacute;rdida, robo, destrucci&oacute;n, vandalismo, incendio, desastres naturales y dem&aacute;s da&ntilde;os en general que sufran los Bienes Pignorados, as&iacute; como los da&ntilde;os y perjuicios que se ocasionen o pudieran ocasionar a terceros en su persona o propiedades, as&iacute; como la asistencia legal que pudiera requerirse. En virtud de lo anterior, las Partes convienen en que la Acreditada contratar&aacute;, a su costo y durante toda la vigencia de este Contrato, los seguros que fueren necesarios para cubrir, de la forma m&aacute;s amplia posible y de conformidad con las coberturas que requiere la Acreditante, y que ha hecho del conocimiento de la Acreditada, los riesgos de da&ntilde;os o p&eacute;rdidas, transportaci&oacute;n, instalaci&oacute;n y circulaci&oacute;n de los Bienes Pignorados, as&iacute; como las responsabilidades por da&ntilde;os a terceros que puedan causarse por la posesi&oacute;n, el uso y goce de los mismos, por el Plazo, o cualquier extensi&oacute;n del mismo, del o de los Anexos A.</span></p>
+<p><span style="font-weight: 400;">Adicionalmente, en el supuesto de que la Acreditada sea persona f&iacute;sica, la Acreditante podr&aacute; contratar, sin estar obligada a ello, por orden y cuenta de la Acreditada, en la fecha de firma del presente instrumento, un seguro de vida a favor de la Acreditada, la suma asegurada ser&aacute; revisable en forma anual, mientras exista adeudo en favor de la Acreditante, debiendo ser los t&eacute;rminos de dicha contrataci&oacute;n a satisfacci&oacute;n de &eacute;ste y quedando la p&oacute;liza respectiva en su poder. La Acreditada u Obligado Solidario, conforme a la Ley Sobre el Contrato de Seguro, deben declarar todos los hechos importantes de salud a que se refiere el Consentimiento o Certificado individual para ser asegurado tal y como los conozca o deba conocer en el momento de firmarlos; en la inteligencia que la no declaraci&oacute;n o inexacta o falsa declaraci&oacute;n podr&iacute;a originar la p&eacute;rdida del derecho asegurado o de los beneficiarios en su caso.</span></p>
+
+<p><span style="font-weight: 400;">Las p&oacute;lizas correspondientes designar&aacute;n a la Acreditante como beneficiario en primer lugar y grado, irrevocable y preferente, y contendr&aacute;n una cl&aacute;usula de pago directo en favor de la Acreditante, sin importar cualquier incumplimiento de garant&iacute;a u otro acto u omisi&oacute;n de la Acreditada. Cualquier gasto realizado por la Acreditante para ajustar o cobrar los seguros ser&aacute; cubierto por la Acreditada. La Acreditada no har&aacute; ajustes ni cobrar&aacute; indemnizaciones por seguros directamente de las compa&ntilde;&iacute;as aseguradoras salvo que cuente con el consentimiento previo y por escrito de la Acreditante.</span></p>
+
+<p><span style="font-weight: 400;">Asimismo, la Acreditada no podr&aacute; alterar o cancelar cualquier estipulaci&oacute;n de la p&oacute;liza o la p&oacute;liza misma, sino hasta que hayan transcurrido 30 (treinta) d&iacute;as h&aacute;biles despu&eacute;s de que se haya notificado por escrito a la Acreditante sobre dicha alteraci&oacute;n o cancelaci&oacute;n y esta &uacute;ltima haya otorgado su consentimiento por escrito.</span></p>
+
+<p><span style="font-weight: 400;">En caso de un evento de p&eacute;rdida de los Bienes Pignorados, la Acreditante aplicar&aacute; las indemnizaciones del seguro, en todo o en parte, a satisfacer el pago de cualquier cantidad vencida y por vencer a cargo de la Acreditada frente a la Acreditante derivada de este Contrato y su o sus Anexos A; en el entendido, sin embargo, que si el importe de las indemnizaciones pagadas, no alcanzare para cubrir dichas obligaciones, la Acreditada quedar&aacute; obligada al pago de los faltantes. En cualquier caso, la Acreditada deber&aacute;, y en este acto se obliga expresamente a pagar: los deducibles, los endosos, el costo de expedici&oacute;n de la p&oacute;liza, las primas pendientes por cobrar de p&oacute;lizas externas contratadas por la Acreditante (cuando &eacute;stas sean p&oacute;lizas con pagos fraccionados), dem&eacute;ritos y depreciaciones de las p&oacute;lizas de seguro.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditada deber&aacute; dar aviso por escrito a la Acreditante del evento de p&eacute;rdida a m&aacute;s tardar dentro de los 5 (cinco) d&iacute;as siguientes a que tenga lugar el mismo, y deber&aacute;, en su caso, adjuntar copia certificada del acta levantada ante las autoridades correspondientes, misma que deber&aacute; contener la informaci&oacute;n completa de los Bienes Pignorados objeto del evento de p&eacute;rdida; asimismo, la Acreditada estar&aacute; obligada a proporcionar a la compa&ntilde;&iacute;a aseguradora toda la documentaci&oacute;n que le sea requerida por esta &uacute;ltima para el pago de la indemnizaci&oacute;n, as&iacute; como a cubrir todos los gastos relacionados con la obtenci&oacute;n de dicha documentaci&oacute;n, incluso los relacionados con la acreditaci&oacute;n de propiedad correspondiente. En caso de no proporcionar la informaci&oacute;n y afectar el pago de la indemnizaci&oacute;n antes referida, la Acreditada continuar&aacute; obligada al pago de sus obligaciones conforme al presente Contrato y su o sus Anexos A.</span></p>
+
+<p></p>
+<p></p>
+
+<p><span style="font-weight: 400;">La Acreditada deber&aacute; contratar los seguros a que se refiere esta cl&aacute;usula con cualquier compa&ntilde;&iacute;a aseguradora de reconocida solvencia y registrada ante la Comisi&oacute;n Nacional de Seguros y Fianzas, y entregar a la Acreditante: </span><strong>(a)</strong><span style="font-weight: 400;"> copia de la p&oacute;liza de seguro a m&aacute;s tardar a los </span><span style="font-weight: 400;">2 (dos)</span><span style="font-weight: 400;"> d&iacute;as h&aacute;biles siguientes de la celebraci&oacute;n del presente Contrato, as&iacute; como copia de la renovaci&oacute;n de dichas p&oacute;lizas mientras est&eacute; en vigor el presente Contrato y el o los Anexos A, o la pr&oacute;rroga en su caso, incluyendo las cl&aacute;usulas complementarias (si las hubiere) de inclusiones y exclusiones, o limitaciones a las mismas a m&aacute;s tardar dentro de los 5 (cinco) d&iacute;as naturales siguientes a que concluya la vigencia de la p&oacute;liza correspondiente; </span><strong>(b)</strong><span style="font-weight: 400;"> los recibos correspondientes del pago de las primas respectivas; y </span><strong>(c)</strong><span style="font-weight: 400;"> el original o copia del endoso irrevocable y transferible a favor de la Acreditante.&nbsp;</span></p>
+
+<p><span style="font-weight: 400;">De no cumplir la Acreditada con sus obligaciones establecidas en esta cl&aacute;usula, la Acreditante podr&aacute;, sin estar obligada a ello, contratar el seguro correspondiente por los riesgos que deba amparar y por cualquiera otros que estime convenientes, por cuenta de la Acreditada, en el entendido de que esta &uacute;ltima: </span><strong>(i)</strong><span style="font-weight: 400;"> se obliga a pagar a la Acreditante las cantidades que se generen con motivo de dicha contrataci&oacute;n y que se har&aacute;n constar en el estado de cuenta que emite la Acreditante para el pago de las cantidades correspondientes; y en caso de no pagarse dichas cantidades se aplicar&aacute;n los Intereses Moratorios establecidos en este Contrato y en el o los Anexos A; y </span><strong>(ii)</strong><span style="font-weight: 400;"> se obliga a mantener y pagar el seguro contratado por la Acreditante por cuenta de la Acreditada durante todo el tiempo en que dicha p&oacute;liza se encuentre vigente, sin que &eacute;sta &uacute;ltima pueda solicitar la cancelaci&oacute;n de la p&oacute;liza sino hasta el aniversario anual de la misma. No obstante, lo anterior, en el evento de que la Acreditante est&eacute; de acuerdo en cancelar la p&oacute;liza aqu&iacute; referida antes del plazo establecido, la Acreditada se obliga y est&aacute; de acuerdo en pagar a la Acreditante los gastos que se generen con motivo de dicha cancelaci&oacute;n.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditante est&aacute; facultada frente a las compa&ntilde;&iacute;as aseguradoras con quienes se contraten los seguros referidos en esta cl&aacute;usula, para ceder, transferir, pignorar o de cualquier otra manera gravar los derechos que tenga como beneficiario irrevocable y preferente, en primer lugar y grado, respecto de los seguros referidos en esta cl&aacute;usula, sin necesidad de consentimiento expreso y/o por escrito adicional alguno por parte de la Acreditada.</span></p>
+
+<p><span style="font-weight: 400;">La Acreditante podr&aacute; en cualquier momento solicitar a la Acreditada que &eacute;sta obtenga de las compa&ntilde;&iacute;as aseguradoras con quienes se contraten dichos seguros, las p&oacute;lizas, endosos, reconocimientos, certificados o cualesquiera otras evidencias documentales que comprueben la aceptaci&oacute;n de, o notificaci&oacute;n a, dichas compa&ntilde;&iacute;as aseguradoras.</span></p>
+
+<p><span style="font-weight: 400;">Si con motivo de un evento de p&eacute;rdida, la Acreditada estuviere impedida temporalmente de usar los Bienes Pignorados, persistir&aacute; su obligaci&oacute;n de pagar los Pagos Parciales y no podr&aacute; pedir la terminaci&oacute;n del cr&eacute;dito por ese motivo.</span></p>
+
+<p><span style="font-weight: 400;">No obstante lo establecido en esta cl&aacute;usula, la Acreditada ser&aacute; responsable en todo momento de los Bienes Pignorados, aun cuando no cuente con la p&oacute;liza de seguro, as&iacute; como en el caso de que la compa&ntilde;&iacute;a de seguros le rechace la indemnizaci&oacute;n o la p&oacute;liza resulte invalidada por cualquier causa; de manera enunciativa mas no limitativa: la falta de pago de la prima, exclusiones, o cualquier limitaci&oacute;n, incumplimiento, o violaci&oacute;n a las condiciones y obligaciones de la Acreditada que contenga la p&oacute;liza.</span></p>
+
+<p><strong>VIG&Eacute;SIMA PRIMERA. Causas de Vencimiento Anticipado.</strong><span style="font-weight: 400;"> Las Partes est&aacute;n de acuerdo que cualquiera de los eventos que a continuaci&oacute;n se enlistan, constituir&aacute;n una causa de vencimiento anticipado, y en tal virtud podr&aacute;n dar por vencido anticipadamente el plazo establecido para el pago de la totalidad del Monto del Cr&eacute;dito, sin necesidad de declaraci&oacute;n judicial previa o notificaci&oacute;n alguna y hacer pagadero el saldo de la suerte principal del mismo, junto con sus intereses acumulados e insolutos y las dem&aacute;s cantidades que deban pagarse de acuerdo con los t&eacute;rminos de este Contrato, su o sus Anexos A y Pagar&eacute;s, mismos que se consideran individualmente como causa de incumplimiento, a saber:</span></p>
+
+<p><strong>1)</strong><span style="font-weight: 400;"> Si la Acreditada deja de cumplir oportunamente con uno o m&aacute;s Pagos Parciales o cualquier pago previsto en este Contrato, su o sus Anexos A y Pagar&eacute;s.</span></p>
+<p><strong>2)</strong><span style="font-weight: 400;"> Si la Acreditada incumplen cualquier obligaci&oacute;n a su cargo en t&eacute;rminos del presente Contrato, su o sus Anexos A y Pagar&eacute;s suscritos a su amparo, as&iacute; como de cualquier obligaci&oacute;n asumida al amparo del presente instrumento, y de cualquier otro documento suscrito con motivo de los mismos.</span></p>
+<p><strong>3)</strong><span style="font-weight: 400;"> En los dem&aacute;s casos en que, conforme a la ley o este Contrato, sea exigible anticipadamente el cumplimiento de la obligaci&oacute;n a plazo.</span></p>
+<p><strong>4)</strong><span style="font-weight: 400;"> Si la Acreditada deja de cumplir con cualquiera de sus obligaciones contractuales ya sean de hacer o no hacer, y de dar, asumidas conforme al presente Contrato y el o los Anexos A.</span></p>
+<p><strong>5)</strong><span style="font-weight: 400;"> Cuando la Acreditada, no pague de manera generalizada sus deudas cuando &eacute;stas se hagan exigibles, o que admitan por escrito la imposibilidad de pagar sus deudas o que hagan una cesi&oacute;n general de bienes en favor de sus acreedores; o que se instaure cualquier procedimiento en contra de la Acreditada con la finalidad de declarar la quiebra, insolvencia o concurso de cualquiera de los anteriores, o en busca de su liquidaci&oacute;n, cierre, reorganizaci&oacute;n o en busca de un arreglo, protecci&oacute;n, beneficio o compensaci&oacute;n de sus deudas con base en cualquier ley relacionada con un concurso, quiebra, insolvencia, reorganizaci&oacute;n o compensaci&oacute;n de acreedores, o la b&uacute;squeda de una orden para liberarse de la designaci&oacute;n de un s&iacute;ndico, fiduciario, o cualquier otro funcionario similar para la Acreditada o cualquier parte substancial de sus propiedades o que cualquiera de ellos comiencen una acci&oacute;n corporativa para realizar cualesquiera de los procedimientos mencionados en esta cl&aacute;usula.</span></p>
+<p><strong>6)</strong><span style="font-weight: 400;"> Cuando la Acreditada</span> <span style="font-weight: 400;">tome cualquier acci&oacute;n corporativa o de negocios resultado de la cual, existan cambios fundamentales o diversifique la naturaleza de sus negocios, sin consentimiento previo de la Acreditante.</span></p>
+<p><strong>7)</strong><span style="font-weight: 400;"> Cuando la Acreditada</span> <span style="font-weight: 400;">tome cualquier acci&oacute;n para vender o de cualquier manera disponer de cualquier activo fijo esencial para la operaci&oacute;n de sus negocios, a menos que la disposici&oacute;n de tal activo, sea simult&aacute;neamente reemplazada con un activo de igual utilidad y valor equivalente y siempre que la Acreditante haya consentido dicha disposici&oacute;n.</span></p>
+<p><strong>8)</strong><span style="font-weight: 400;"> Si ocurre cualquier evento que pudiera tener efectos materialmente adversos en: </span><strong>(i)</strong><span style="font-weight: 400;"> la propiedad, negocios, operaciones, condici&oacute;n financiera, deudas o en la capitalizaci&oacute;n de la Acreditada; </span><strong>(ii)</strong><span style="font-weight: 400;"> la habilidad de la Acreditada</span> <span style="font-weight: 400;">de cumplir con sus obligaciones que existan al amparo del presente Contrato, Anexos A y Pagar&eacute;s suscritos a su amparo, y de cualquier otro documento que se suscriba con motivo de los mismos; </span><strong>(iii)</strong><span style="font-weight: 400;"> la posibilidad de hacer exigible el presente Contrato, su o sus Anexos A y Pagar&eacute;s suscritos a su amparo, o cualquier otro documento derivado de los mismos; </span><strong>(iv)</strong><span style="font-weight: 400;"> el pago oportuno del principal o de los intereses cuando sean exigibles; y/o </span><strong>(v)</strong><span style="font-weight: 400;"> la constituci&oacute;n de la hipoteca y/o prenda, afectando los derechos de la Acreditante.</span></p>
+<p><strong>9)</strong><span style="font-weight: 400;"> En cualquier tiempo durante la vigencia del presente Contrato, el o los Anexos A y Pagar&eacute;s suscritos a su amparo, de cualquier otro Instrumento que se suscriba con motivo de los mismos, sea o se convierta en ilegal para la Acreditada</span> <span style="font-weight: 400;">de cumplir sus obligaciones conforme a los t&eacute;rminos y condiciones que se contengan en el presente Contrato, el o los Anexos A y Pagar&eacute;s suscritos a su amparo, de cualesquier otros documentos que se suscriba con motivo de los mismos, o cualquier otro documento derivado de los mismos o cualesquiera de tales obligaciones no sean o dejen de ser legales, v&aacute;lidas y obligatorias y exigibles contra la Acreditada.&nbsp;</span></p>
+<p><span style="font-weight: 400;">Sin perjuicio de lo anterior, el </span><strong>Monto del</strong> <strong>Cr&eacute;dito</strong><span style="font-weight: 400;"> se extinguir&aacute; en los casos previstos por el Art&iacute;culo 301 de la </span><strong>LGTOC.</strong></p>
+<p><span style="font-weight: 400;">En caso de que tenga lugar una causa de vencimiento anticipado, la Acreditante podr&aacute;, sin necesidad de declaraci&oacute;n judicial, y mediante escrito dirigido al domicilio de la Acreditada</span><strong>, </strong><span style="font-weight: 400;">dar por vencido anticipadamente este Contrato y su o sus Anexos A, sin responsabilidad, exigiendo a la Acreditada el pago anticipado de todas las cantidades que le adeude a la fecha de la resoluci&oacute;n del presente instrumento, por concepto, de manera enunciativa m&aacute;s no limitativa, del principal, Intereses Ordinarios, Intereses Moratorios, comisiones, pena convencional y cualquier accesorio derivado del presente Contrato.</span></p>
+<p><span style="font-weight: 400;">Por su parte, la Acreditada podr&aacute; solicitar a la Acreditante, dentro de un plazo que no podr&aacute; exceder de 10 (diez) d&iacute;as h&aacute;biles, posteriores a la celebraci&oacute;n del o de los Anexos A, cancelar el presente Contrato y/o el dicho Anexo A, sin responsabilidad alguna para la misma, siempre y cuando la Acreditada no hubiese dispuesto del Monto del Cr&eacute;dito otorgado al amparo del presente Contrato y su o sus Anexos A.</span></p>
+<p><span style="font-weight: 400;">En caso de que la Acreditada llegase a cancelar el presente Contrato y/o el o los Anexos A, deber&aacute; pagar a la Acreditante todos los gastos o adeudos que se hubiesen generado a su cargo, a la fecha de cancelaci&oacute;n del Contrato y/o el o los Anexos A, en el entendido, que si la Acreditada no cubre el importe total de los gastos o adeudos que se hubieren generado a la fecha de cancelaci&oacute;n solicitada por la Acreditada, esta &uacute;ltima est&aacute; de acuerdo en que dichas cantidades ser&aacute;n actualizadas conforme a la nueva fecha de cancelaci&oacute;n que le solicite a la Acreditante.</span></p>
+<p><span style="font-weight: 400;">En el supuesto de que la Acreditada decidiera cancelar el presente Contrato y/o el o los Anexos A, conforme a lo establecido anteriormente, pagar&aacute; a la Acreditante la Pena Convencional establecida en el presente Contrato y el o los Anexos A.</span></p>
+
+<p><strong>VIG&Eacute;SIMA SEGUNDA. Cesi&oacute;n.</strong><span style="font-weight: 400;"> La Acreditada no podr&aacute; ceder, transferir, traspasar o de cualquier otra forma transmitir sus derechos y obligaciones conforme al presente Contrato, su o sus Anexos A y el Pagar&eacute; o cualquier otro documento relacionado con el presente Contrato y el Monto del Cr&eacute;dito sin la previa autorizaci&oacute;n, por escrito, de la Acreditante.</span></p>
+<p><span style="font-weight: 400;">La Acreditada faculta en este acto y de forma expresa a la Acreditante para ceder, transferir, traspasar, descontar, vender, o de cualquier otra forma transmitir total o parcialmente sus derechos y/u obligaciones de conformidad con el presente Contrato, sus Anexos A, Pagar&eacute;s y cualquier otro documento relacionado o suscrito al amparo del presente Contrato y/o el Monto del Cr&eacute;dito sin necesidad de consentimiento o autorizaci&oacute;n adicional por parte de la Acreditada.</span></p>
+
+<p><strong>VIG&Eacute;SIMA TERCERA.</strong> <strong>Cl&aacute;usula de No Renuncia</strong><span style="font-weight: 400;"> En el evento de que alguna de las Partes no ejerciere alguno de los derechos a su favor derivados del presente Contrato o de cualquier cr&eacute;dito consignado en cada uno de los Anexos A del mismo, &eacute;stos no se entender&aacute;n renunciados bajo ninguna circunstancia. Las Partes acuerdan que para el ejercicio de cualquiera de los derechos derivados por este Contrato o cualquiera de los documentos suscritos su amparo, deber&aacute; ser ejercidos dentro de un plazo m&aacute;ximo equivalente al plazo del Cr&eacute;dito, siendo los pagar&eacute;s suscritos por la Acreditada y el Obligado Solidario en su car&aacute;cter de aval, los &uacute;nicos documentos exentos a lo descrito en este p&aacute;rrafo.</span></p>
+
+<p><strong>V&Iacute;G&Eacute;SIMA CUARTA. Modificaciones.</strong><span style="font-weight: 400;"> Las partes que suscriben el presente Contrato convienen expresamente que en caso de que la Acreditada quisiera realizar alguna modificaci&oacute;n al presente Contrato y/o el o los Anexos A, deber&aacute; presentar un escrito a la Acreditante, en donde deber&aacute; especificar los cambios que desee realizar al Contrato y/o al o los Anexos A, la Acreditante a su vez tendr&aacute; un plazo de 45 (cuarenta y cinco) d&iacute;as naturales para contestar si acepta las modificaciones solicitadas por la Acreditada, y en su caso si se requiere adecuarlas al o a los Anexos A y/o suscribir nuevos pagar&eacute;s seg&uacute;n corresponda.</span></p>
+<p><span style="font-weight: 400;">En caso de que la Acreditante solicite la modificaci&oacute;n del Contrato y/o el o los Anexos A, este &uacute;ltimo tendr&aacute; un plazo de 30 (treinta) d&iacute;as naturales de anticipaci&oacute;n a la entrada en vigor, debiendo notificar a la Acreditada las modificaciones propuestas, mediante aviso incluido en el estado de cuenta correspondiente o mediante v&iacute;a electr&oacute;nica seg&uacute;n lo acuerden las partes. El aviso deber&aacute; especificar de forma notoria la fecha en que las modificaciones surtir&aacute;n efecto.</span></p>
+<p><span style="font-weight: 400;">En el evento de que la Acreditada no est&eacute; de acuerdo con las modificaciones propuestas por la Acreditante, podr&aacute; solicitar la terminaci&oacute;n del Contrato hasta en un plazo de 60 (sesenta) d&iacute;as naturales despu&eacute;s de la entrada en vigor de dichas modificaciones, sin responsabilidad ni comisi&oacute;n alguna a su cargo, debiendo cubrir en su caso los adeudos que ya se hubieren generado a la fecha en que solicite dar por terminada la operaci&oacute;n.</span></p>
+<p><span style="font-weight: 400;">Una vez transcurrido el plazo conforme a lo se&ntilde;alado en el p&aacute;rrafo anterior, sin que la Acreditante haya recibido comunicaci&oacute;n alguna por parte de la Acreditada, se tendr&aacute;n por aceptadas las modificaciones al Contrato y/o al o los Anexos A.</span></p>
+<p><span style="font-weight: 400;">Las partes que suscriben el presente Contrato acuerdan expresamente en que la Acreditada no podr&aacute; hacer modificaciones y/o adiciones a los t&eacute;rminos y condiciones pactados en el Contrato y el o los Anexos A respectivos, sin el previo consentimiento por escrito que emita la Acreditante.</span></p>
+
+<p><strong>VIG&Eacute;SIMA QUINTA. T&iacute;tulos de las Cl&aacute;usulas. </strong><span style="font-weight: 400;">&nbsp;Los t&iacute;tulos que se han incluido en cada cl&aacute;usula de este Contrato, son tan s&oacute;lo para referencia y f&aacute;cil manejo, por lo que no deber&aacute;n tener ninguna trascendencia en la interpretaci&oacute;n de los mismos.</span></p>
+
+<p><strong>VIG&Eacute;SIMA SEXTA. Domicilios y Avisos.</strong><span style="font-weight: 400;"> Para los efectos de este Contrato, su o sus Anexos A, pagar&eacute;s y dem&aacute;s documentos que se suscriban a su amparo, las partes se&ntilde;alan como sus domicilios los que se indican en la Car&aacute;tula del Contrato.</span></p>
+<p><span style="font-weight: 400;">Los avisos y notificaciones que deban hacerse las partes de conformidad con este Contrato, su o sus Anexos A u otros documentos suscritos al amparo del presente Contrato, se har&aacute;n por escrito y se entregar&aacute;n o enviar&aacute;n a cada una de las partes a su direcci&oacute;n o a cualquier otra direcci&oacute;n que designen previamente mediante aviso escrito dado a su contraparte. Los avisos y comunicaciones surtir&aacute;n efecto, si se dan por escrito al ser entregadas, mediante telegrama, correo certificado al momento de la entrega, as&iacute; mismo si se env&iacute;an por fax o cualquier otro medio electr&oacute;nico, al ser recibida la confirmaci&oacute;n por ese medio.</span></p>
+
+<p><strong>VIG&Eacute;SIMA S&Eacute;PTIMA. JURISDICCI&Oacute;N Y LEYES APLICABLES. </strong><span style="font-weight: 400;">Para todo lo relativo a la interpretaci&oacute;n y cumplimiento del presente Contrato y su o sus Anexos A, as&iacute; como de cualquiera de los documentos suscritos al amparo de este Contrato, las Partes declaran aplicables las leyes Federales y Locales vigentes en la Ciudad de M&eacute;xico. En caso de conflicto respecto de su interpretaci&oacute;n, cumplimiento y ejecuci&oacute;n, las partes se someten por su libre voluntad expresa e incondicionalmente a la jurisdicci&oacute;n de los tribunales comunes competentes para la Ciudad de M&eacute;xico, renunciando a cualquier fuero que en raz&oacute;n de su domicilio o por cualquier otra causa, en el presente o en lo futuro, les pudiere corresponder.</span></p>
+
+<p><span style="font-weight: 400;">Le&iacute;do por las Partes el presente Contrato suscrito por el anverso y reverso de cada hoja, enteradas y conformes estas con su contenido, valor y fuerza legal, manifiestan que su voluntad ha sido libremente expresada, que su consentimiento no se encuentra viciado con dolo, error, mala fe o cualquier otro defecto de la voluntad.</span></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p class = "saltara"><strong>Firmado en TRES ejemplares originales. Fecha: {{dias}} de {{mes}} de {{año}}.</strong></p>
+
+<div class="row">
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITANTE</h5>
+              	    	  	<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text" colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Representada: {{acreditante}}</p>
+        <p>Cargo: {{cargo}}</p>
+        <p>Nombre: {{apoderado_acreditante}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITADA</h5>
+        					<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <!--p>Representada: {{denominacion}}</p-->
+        <p>Por su propio derecho:</p>
+        <p>Nombre: {{obligado_solidario}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 53rem;">
+      <div class="card-body">
+
+        <h5 class="card-title">TESTIGO</h5>
+
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Nombre: {{testigo}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><em><span style="font-weight: 400;">La presente hoja de firmas corresponde al CONTRATO MAESTRO DE APERTURA DE CR&Eacute;DITO SIMPLE CON GARANT&Iacute;A PRENDARIA SIN TRANSMISI&Oacute;N DE LA POSESI&Oacute;N No. {{numero_contrato}} celebrado entre {{acreditante}} como Acreditante; {{obligado_solidario}} como Acreditada; con fecha {{dias}} de {{mes}} de {{año}}.</span></em></p>
+
+
+
+{% endblock %}

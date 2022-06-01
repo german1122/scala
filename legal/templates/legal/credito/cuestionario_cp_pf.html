@@ -1,0 +1,235 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <title>VILAR KPTL</title>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"-->
+    </head>
+        <body>
+            <h2>Generador Automático de Contrato Maestro de Crédito Prendario</h2>
+            <p>Se considerarán una Acreditada persona física y un testigo.</p>
+            <form method="post" action="{{ url_for('legal.credito_prendario_pf')}}">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                    <h5>Información de la Acreditante:</h5>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Número de Contrato</span>
+                        <input type="text" class="form-control" placeholder="Nombre de la Acreditante" aria-label="days" name = "numero_contrato">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Acreditante</span>
+                        <input type="text" class="form-control" placeholder="Nombre de la Acreditante" aria-label="days" name = "acreditante">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">RFC Acreditante</span>
+                        <input type="text" class="form-control" placeholder="RFC de la Acreditante" aria-label="days" name = "RFC_acreditante">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Domicilio</span>
+                        <input type="text" class="form-control" placeholder="Domicilio de la Acreditante" aria-label="days" name = "domicilio_acreditante">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Página Web</span>
+                        <input type="text" class="form-control" placeholder="Página Web de la Acreditante" aria-label="years" name = "pagina_web">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Apoderado Acreditante</span>
+                        <input type="text" class="form-control" placeholder="Escribe el nombre completo" aria-label="capital" name = "apoderado_acreditante">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Facultades</span>
+                        <input type="text" class="form-control" placeholder="Facultades conferidas mediante poder legal" aria-label="comission" name = "facultades">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Póliza</span>
+                        <input type="text" class="form-control" placeholder="Número de póliza" aria-label="start year" name = "poliza">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha Póliza</span>
+                        <input type="text" class="form-control" placeholder="Fecha en que fue emitida la póliza" aria-label="start month" name = "fecha_poliza">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fedatario Público</span>
+                        <input type="text" class="form-control" placeholder="Nombre del Fedatario Público" aria-label="start date" name = "fedatario">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Notaría/Correduría</span>
+                        <input type="text" class="form-control" placeholder="Número de la Notaría" aria-label="start date" name = "numero_notaria">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Entidad</span>
+                        <input type="text" class="form-control" placeholder="Estado de la República Mexicana de creación Acreditante" aria-label="start date" name = "entidad">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Folio Mercantil</span>
+                        <input type="text" class="form-control" placeholder="Folio Mercantil del Registro Público de la Propiedad" aria-label="start date" name = "folio_mercantil">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Lugar de Inscripción</span>
+                        <input type="text" class="form-control" placeholder="Lugar de inscripción al registro público de la propiedad" aria-label="start date" name = "lugar_inscripcion">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha de Inscripción</span>
+                        <input type="text" class="form-control" placeholder="Fecha de inscripción al RPP" aria-label="start date" name = "fecha_inscripcion">
+                    </div>
+                    <h5>Información de la Acreditada:</h5>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Denominación</span>
+                        <input type="text" class="form-control" placeholder="ejemplo: Vilar KPTL, SAPI de CV" aria-label="start date" name = "denominacion">
+                    </div>
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">RFC Acreditada</span>
+                        <input type="text" class="form-control" placeholder="RFC" aria-label="start date" name = "RFC_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nacionalidad</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: mexicana" aria-label="start date" name = "nacionalidad">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Giro</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: comercialización" aria-label="start date" name = "giro">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Teléfonos</span>
+                        <input type="text" class="form-control" placeholder="Teléfonos de contacto de la Acreditada" aria-label="start date" name = "telefonos">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">email</span>
+                        <input type="text" class="form-control" placeholder="email" aria-label="start date" name = "email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Domicilio de la Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Avenida #-#interior, Colonia, Alcaldía, Código Postal" aria-label="start date" name = "domicilio_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Apoderado Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Nombre completo del apoderado legal de la Acreditada" aria-label="start date" name = "apoderado_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Instrumento</span>
+                        <input type="text" class="form-control" placeholder="El número del instrumento" aria-label="start date" name = "instrumento_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha del instrumento</span>
+                        <input type="text" class="form-control" placeholder="Fecha de firma del instrumento" aria-label="start date" name = "fecha_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fedatario público Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Nombre completo" aria-label="start date" name = "fedatario_publico_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Notaría Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Intoducir el número" aria-label="start date" name = "notaria_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Entidad Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Estado de la República Mexicana" aria-label="start date" name = "entidad_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Folio Mercantil</span>
+                        <input type="text" class="form-control" placeholder="El número de folio mercantil de inscripción en el RPP de 5 dígitos" aria-label="start date" name = "inscripcion_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Lugar de Inscripción Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Lugar de Inscripción ante el RPP" aria-label="start date" name = "lugar_inscripcion_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha de Inscripción Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Fecha de inscripción en AA/MM/DD" aria-label="start date" name = "fecha_inscripcion_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Actos Corporativos posteriores</span>
+                        <input type="text" class="form-control" placeholder="En caso que existan en el RPP" aria-label="start date" name = "actos_corporativos">
+                    </div>
+                    <h5>Información del Apoderado:</h5->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Facultades Apoderado</span>
+                        <input type="text" class="form-control" placeholder="Deberá contar con facultades de administración, dominio y títulos" aria-label="start date" name = "facultades_apoderado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Póliza Apoderado</span>
+                        <input type="text" class="form-control" placeholder="Número del registro en el RPP" aria-label="start date" name = "poliza_apoderado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha Póliza Apoderado</span>
+                        <input type="text" class="form-control" placeholder="En el formato AA/MM/DD" aria-label="start date" name = "fecha_poliza_apoderado">
+                    </div-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cargo del firmante Acreditante</span>
+                        <input type="text" class="form-control" placeholder="Cargo que desempeña en la empresa" aria-label="start date" name = "cargo">
+                    </div>
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cargo del firmante Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Cargo que desempeña en la empresa" aria-label="start date" name = "cargo_acreditada">
+                    </div>
+                    <h5>Información del Obligado Solidario:</h5-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Nombre" aria-label="start date" name = "obligado_solidario">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">RFC Acreditada</span>
+                        <input type="text" class="form-control" placeholder="RFC con homoclave" aria-label="start date" name = "RFC_obligado">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Régimen Social</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: sueldos y salarios" aria-label="start date" name = "regimen_social">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nacionalidad</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: mexicano" aria-label="start date" name = "nacionalidad_obligado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciudad Natal</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: CDMX" aria-label="start date" name = "ciudad_obligado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">CURP</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: CDMX" aria-label="start date" name = "curp">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ocupación</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: consultor" aria-label="start date" name = "ocupacion">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Teléfonos</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: 55234234234; 522342342" aria-label="start date" name = "telefono_obligado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">e-mail</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: df@df.com" aria-label="start date" name = "email_obligado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Domicilio</span>
+                        <input type="text" class="form-control" placeholder="Calle Número, Colonia, Alcaldía, Ciudad, C.P." aria-label="start date" name = "domicilio_obligado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Estado Civil</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: casado mediante bienes separados" aria-label="start date" name = "estado_civil">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre testigo</span>
+                        <input type="text" class="form-control" placeholder="Nombre completo" aria-label="start date" name = "testigo">
+                    </div>
+                    <div clas="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciudad de firma</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: Ciudad de México" aria-label="start date" name = "ciudad_firma">
+                    </div>
+
+
+
+                    <button class="btn btn-primary" type="submit">Crear</button>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </form>
+        </body>
+</html>
+{% endblock %}

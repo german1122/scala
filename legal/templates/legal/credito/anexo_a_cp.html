@@ -1,0 +1,455 @@
+{% extends "base0.html" %}
+{% block content %}
+
+
+<p>&nbsp;</p>
+<p style="text-align: right;"><span style="font-weight: 400;">Contrato de Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria Sin Transmisi&oacute;n de la Posesi&oacute;n No.: {{numero_contrato}}</span></p>
+<p style="text-align: right;">&nbsp;</p>
+
+
+<p style="text-align: center;"><strong>ANEXO A</strong></p>
+<p style="text-align: center;"><strong>No. </strong>{{numero_anexo}}</p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Este </span><strong>ANEXO A</strong><span style="font-weight: 400;"> forma parte integrante del </span><strong>CONTRATO MAESTRO DE APERTURA DE CR&Eacute;DITO SIMPLE CON GARANT&Iacute;A PRENDARIA SIN TRANSMISI&Oacute;N DE LA POSESI&Oacute;N </strong><span style="font-weight: 400;">cuyo n&uacute;mero se se&ntilde;ala en el extremo superior derecho de este documento,&nbsp;</span><span style="font-weight: 400;">celebrado con fecha {{Dias}} de&nbsp;{{Mes}} de&nbsp;{{Año}} entre {{acreditante}}, en su car&aacute;cter de acreditante, a quien se le denomin&oacute; la </span><strong>Acreditante</strong><span style="font-weight: 400;">; por otra parte {{acreditada}}, en su car&aacute;cter de acreditada, a quien se le denomin&oacute; la </span><strong>Acreditada</strong><span style="font-weight: 400;">; y, en su caso,&nbsp;{{obligado_solidario}} en su car&aacute;cter de obligado solidario, a quien se le denomin&oacute; el </span><strong>Obligado Solidario</strong><span style="font-weight: 400;">.</span></p>
+
+<p><span style="font-weight: 400;">Los t&eacute;rminos que en este Anexo A sean empleados con inicial may&uacute;scula, ser&aacute;n t&eacute;rminos definidos y ostentar&aacute;n el significado que correlativamente se les asigna en el citado Contrato, salvo que se les atribuya un significado distinto.</span></p>
+
+<p><strong>D E C L A R A C I &Oacute; N</strong></p>
+
+<p><strong>&Uacute;NICA</strong><span style="font-weight: 400;">:</span><strong> Declaran las PARTES, bajo protesta de decir verdad, por su propio derecho o por conducto de sus representantes legales, seg&uacute;n corresponda, que:</strong></p>
+<ol>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Celebraron el Contrato, por virtud del cual la Acreditante apertura a la Acreditada un cr&eacute;dito bajo la modalidad de Simple, hasta por la cantidad dispuesta en este Anexo A, bajo el rubro Monto del Cr&eacute;dito.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Se reconocen mutuamente la personalidad con la que comparecen, por si o por conducto de sus representantes legales, respectivamente, para celebrar el presente Anexo A.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Ratifican todas y cada una de sus declaraciones y obligaciones consignadas en el Contrato.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Sus datos personales y/o corporativos se detallan en la Car&aacute;tula del Contrato, la cual forma parte integrante de este Anexo A, para todos los efectos legales a que haya lugar.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">En cumplimiento de dicho Contrato, es su voluntad celebrar el presente Anexo A en los t&eacute;rminos y bajo las condiciones aqu&iacute; se&ntilde;aladas, as&iacute; como los pactados en el Contrato, para todos los efectos legales conducentes.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">La Acreditada manifiesta que, en la fecha de firma de este Anexo A y durante toda la vigencia del mismo, no tiene ni tendr&aacute; pendiente, ni existe ni existir&aacute; intenci&oacute;n o riesgo de que vaya a iniciarse, alguna acci&oacute;n o procedimiento, ya sea judicial o extrajudicial, que afecte o pudiera afectar la legalidad, validez o exigibilidad del Cr&eacute;dito otorgado por virtud del presente Anexo A y/o del Contrato, y que los recursos con los que lleva y llevar&aacute; a cabo sus operaciones normales del negocio provienen y provendr&aacute;n de fuentes l&iacute;citas.</span></li>
+</ol>
+
+<div class="col-md-7">
+	<br>
+	<br>
+
+	<div class="card text-center"  style="width: 50rem;">
+		<div class="card-header">
+			<h5 class="card-title">I. Relación de los Bienes Pignorados</h5>
+		</div>
+		<div class="card-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>N</th>
+						<th scope="col" colspan="2">Datos de
+						Factura de Adquisición
+						</th>
+						<th scope="col">Descripción del Bien</th>
+						<th scope="col">Accesorios</th>
+						<th scope="col">Observaciones</th>
+						<th scope="col">Precio (sin I.V.A.)</th>
+						<!--th scope="col">Cantidad</th-->
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>{{bien1_folio}}</td>
+						<td colspan="3">{{bien1_descripcion}}</td>
+						<td>{{bien1_accesorios}}</td>
+						<td colspan="2">Todos y cada uno de los bienes, instrumentos, dispositivos, muebles o equipos que sean objeto de la compra por medio de la disposición del presente crédito; Todos y cada uno de los bienes, instrumentos, dispositivos, muebles o equipos descritos y enlistados en dicha Factura contenida en el Anexo B</td>
+						<td>{{bien1_precio}}</td>
+						<!--td>{{bien1_cantidad}}</td-->
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>{{bien2_folio}}</td>
+						<td colspan="2"></td>
+						<td>{{bien2_accesorios}}</td>
+						<td>{{bien2_observacion}}</td>
+						<td>{{bien2_precio}}</td>
+						<!--td>{{bien2_cantidad}}</td-->
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>En caso de existir diferencia en los datos de los Bienes Pignorados asentados anteriormente contra los asentados en el Anexo B, prevalecerán los asentados en el Anexo B, por ser el que de forma correcta identifica a los Bienes Pignorados, para todos los efectos legales a que haya lugar.</p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<div class="col-md-7">
+	<div class="card text-center"  style="width: 50rem;">
+		<div class="card-header">
+			<h5 class="card-title">II. Condiciones Especiales del Crédito</h5>
+		</div>
+		<div class="card-body">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Concepto</th>
+						<th scope="col">Condición
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td scope="col">Monto del Crédito:</td>
+						<td scope="col">{{capital}}</td>
+					</tr>
+					<tr>
+						<td>Destino del Crédito:</td>
+						<td>{{destino}}</td>
+					</tr>
+					<tr>
+						<td>Fecha de Inicio del Crédito</td>
+						<td>{{fecha_inicio}}</td>
+					</tr>
+					<tr>
+						<td>Fecha de Vencimiento del Crédito:</td>
+						<td>{{fecha_vencimiento}}</td>
+					</tr>
+					<tr>
+						<td>Pagos Parciales:</td>
+						<td>{{pago_parcial}}</td>
+					</tr>
+					<tr>
+						<td>Comisión por Disposición:</td>
+						<td>{{comision}} sobre el Monto del Crédito de forma financiada.</td>
+					</tr>
+
+					<tr>
+						<td>Comisión por Reestructuración:</td>
+						<td>{{comision_reestructuracion}}</td>
+					</tr>
+					<tr>
+						<td>Comisión por Aclaración no Procedente:</td>
+						<td>$2,500.00 (dos mil quinientos pesos 00/100 M.N.) por evento.</td>
+					</tr>
+					<tr>
+						<td>Comisión por Pago Anticipado:</td>
+						<td>{{comision_pagoanticipado}} más I.V.A. sobre el saldo insoluto pendiente de pago.</td>
+					</tr>
+					<tr>
+						<td>Comisión por Gastos de administración:</td>
+						<!--td>{{costo}} respecto de cualquier ejercicio de gasto.</td-->
+						<td>15% respecto de cualquier ejercicio de gasto.</td>
+					</tr>
+					<tr>
+						<td>Lugar de Pago:</td>
+						<td>Razón Social: {{acreditante}}; Banco: {{banco}}; CLABE: {{CLABE}}; Cuenta: {{cuenta}}</td>
+					</tr>
+					<tr>
+						<td>Comisión por Reestructuración:</td>
+						<td>{{comision_reestructuracion}} más I.V.A. sobre el saldo insoluto pendiente de pago.</td>
+					</tr>
+					<!--tr>
+						<td>Comisión de apertura:</td>
+						<td>{{comision}} más I.V.A. respecto a la Renta Global.</td>
+					</tr-->
+					<tr>
+						<br>
+						<br>
+						<br>
+						<td>Gestión Extrajudicial:</td>
+						<td>{{extrajudicial}} más I.V.A. por cada evento de cobro, hasta la regularización, es decir el pago total del o los pagos vencidos no pagados.</td>
+					</tr>
+					<tr>
+						<td>Pena convencional:</td>
+						<td>{{pena_convencional}} más I.V.A.</td>
+					</tr>
+					<tr>
+						<td>Periodo de Cálculo de Intereses:</td>
+						<td>De forma {{periodo}}, por periodos fijos de {{diasprint}} días; es decir los días {{diaprint}} de cada periodo.</td>
+					</tr>
+
+					<tr>
+						<td>Tasa de Interés Aplicable:</td>
+						<td>Tasa fija del {{tir_anexo}} anual más IVA.</td>
+					</tr>
+					<tr>
+						<td>Intereses Moratorios:</td>
+						<td>La Tasa de Interés Aplicable por 2 (dos).</td>
+					</tr>
+					<tr>
+						<td>Plazo:</td>
+						<td>{{plazo}} periodos de forma {{periodo}}.</td>
+					</tr>
+					<tr>
+						<td>Moneda:</td>
+						<td>{{moneda}}.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+<br>
+<p class="saltard">A continuación presentamos la Tabla de Amortización de este proyecto:</p>
+
+<div class="saltara"
+	<div class="col-md-7">
+		<div class="card text-center"  style="width: 50rem;">
+			<br>
+			<br>
+			<div class="card-header">
+				<br>
+			<br>
+				<h5 class="card-title">III. Tabla de Amortización</h5>
+			</div>
+			<div class="card-body">
+				<table class = "table table-sm" style="width: unset;">
+				    <thead>
+				        <tr>
+				            {% for col in column_namesA %}
+				            <th>
+
+				                {{col}}
+
+				            </th>
+				            {% endfor %}
+				        </tr>
+				    </thead>
+				    <tbody>
+				        {% for row in row_dataA %}
+				        <tr>
+				            {% for col, row_ in zip(column_namesA, row) %}
+				            <td>{{row_}}</td>
+				            {% endfor %}
+				        </tr>
+				        {% endfor %}
+				    </tbody>
+				</table>
+
+			</div>
+		</div>
+		<br>
+		<br>
+	</div>
+
+
+
+<ul>
+<br>
+<br>
+Los términos y condiciones del Contrato Maestro de Apertura de Crédito Simple con Garantía Prendaria sin Transmisión de la Posesión, son, en este acto, incorporados y forman parte del presente Anexo A, como si dichos términos y condiciones estuviesen totalmente previstos en el presente documento.
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+
+<p><span style="font-weight: 400;">Le&iacute;do que fue el presente Anexo A se firma por 3 (Triplicado), en {{ciudad_anexo}}, el día {{Dias}} de {{Mes}} de {{Año}}.</span></p>
+<p style="text-align: justify;"><span style="font-weight: 400;">&nbsp;</span></p>
+<div class="row">
+  <div class="col-sm-8">
+    <div class="card" style="width: 52rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITANTE</h5>
+              	    	  	<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text" colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Representada: {{acreditante}}</p>
+        <p>Cargo: Representante Legal</p>
+        <p>Nombre: {{apoderado}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 52rem;">
+      <div class="card-body">
+        <h5 class="card-title">ACREDITADA</h5>
+        					<br>
+							<br>
+							<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Representada: {{denominacion}}</p>
+        <p>Cargo: Representante Legal</p>
+        <p>Nombre: {{apoderado_acreditada}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 52rem;">
+      <div class="card-body">
+      	<br>
+      	<br>
+      	<br>
+      	<br>
+      	<br>
+        <h5 class="card-title">OBLIGADO SOLIDARIO</h5>
+        				    <br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Nombre: {{obligado_solidario}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p><em><span style="font-weight: 400;">La presente hoja de firmas corresponde al Anexo A No.&nbsp;{{numero_anexo}} del Contrato Maestro de Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria Sin Transmisi&oacute;n de la Posesi&oacute;n No.&nbsp; {{numero_contrato}}, celebrado entre&nbsp;{{acreditante}} como la Acreditante; la Acreditada y, en su caso, el Obligado Solidario, con fecha&nbsp;{{Dias}} de&nbsp;{{Mes}} de {{Año}}.</span></em></p>
+<p></p>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+
+<p class = "saltard"><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<!--p style="text-align: right;"><span style="font-weight: 400;">Contrato de Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria Sin Transmisi&oacute;n de la Posesi&oacute;n No.: {{numero_contrato}}</span></p-->
+
+
+<p style="text-align: center;"><strong>PAGAR&Eacute;</strong></p>
+<p style="text-align: right;"><strong>Por </strong><span style="font-weight: 400;"></span><strong><em>{{capital_inicial}}</em></strong><strong> M.N.</strong></p>
+<p style="text-align: left;"><span style="font-weight: 400;">&nbsp;</span></p>
+Por este Pagaré, {{acreditada}}, a quien en lo sucesivo se le denominará como el Suscriptor, se obliga a pagar incondicionalmente a la orden de {{acreditante}},en lo sucesivo la Beneficiaria, la cantidad de {{capital_inicial}} ({{capital_letra}} Pesos M.N. ), en el ubicado en {{domicilio_acreditante}} o mediante depósito o transferencia electrónica de fondos disponibles el mismo día, a la cuenta número: {{cuenta}}; CLABE No.: {{CLABE}}; BANCO: {{banco}};  {{ciudad_anexo}}; a nombre de la Beneficiaria, o en cualquier otra cuenta bancaria o lugar que la Beneficiaria notifique por escrito a la Suscriptora, mediante {{plazo}} periodos de forma {{periodo}}, precisamente en las fechas y por las cantidades que se indican en el calendario de pagos sucesivos que a continuación se detalla:
+
+
+<div class="col-md-7">
+	<div class="card text-center"  style="width: 50rem;">
+		<div class="card-header">
+			<h5 class="card-title">III. Tabla de Amortización</h5>
+		</div>
+		<div class="card-body">
+			<table class = "table table-sm" style="width: unset;">
+			    <thead>
+			        <tr>
+			            {% for col in column_namesA %}
+			            <th>
+
+			                {{col}}
+
+			            </th>
+			            {% endfor %}
+			        </tr>
+			    </thead>
+			    <tbody>
+			        {% for row in row_dataA %}
+			        <tr>
+			            {% for col, row_ in zip(column_namesA, row) %}
+			            <td>{{row_}}</td>
+			            {% endfor %}
+			        </tr>
+			        {% endfor %}
+			    </tbody>
+			</table>
+
+		</div>
+	</div>
+</div>
+
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+
+
+
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">La</span><strong> Suscriptora </strong><span style="font-weight: 400;">se obliga a pagar a la</span><strong> Beneficiaria, </strong><span style="font-weight: 400;">durante la vigencia del presente</span><strong> Pagar&eacute; </strong><span style="font-weight: 400;">y en las fechas indicadas en la Tabla de Pagos antes se&ntilde;alado, intereses ordinarios calculados sobre saldos insolutos a raz&oacute;n de la Tasa Fija del</span><strong>&nbsp;</strong>{{tir_anexo}}<strong>&nbsp;(</strong>{{tir_letra}}<strong>&nbsp;por ciento m&aacute;s IVA) </strong><span style="font-weight: 400;">anual</span><strong>, </strong><span style="font-weight: 400;">los cuales se generar&aacute;n a partir de la fecha de firma del presente </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">. En caso de que los intereses no sean pagados en las fechas de vencimiento establecidas en la Tabla de Pagos antes descrita, ser&aacute;n capitalizados y generar&aacute;n intereses ordinarios a la tasa antes se&ntilde;alada.</span></p>
+<p><span style="font-weight: 400;">Los intereses ordinarios ser&aacute;n calculados sobre la base de un a&ntilde;o de 360 (trescientos sesenta) d&iacute;as y meses de 30 (treinta) d&iacute;as, a excepci&oacute;n del primer per&iacute;odo que podr&aacute; ser irregular y comprender&aacute; del d&iacute;a en que se suscribe este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, hasta la fecha del primer pago establecido en la Tabla de Pagos.</span></p>
+<p><span style="font-weight: 400;">La falta de pago oportuno de cualquier cantidad que est&eacute; obligada a pagar la </span><strong>Suscriptora,</strong><span style="font-weight: 400;"> conforme al presente </span><strong>Pagar&eacute;,</strong><span style="font-weight: 400;"> causar&aacute; intereses moratorios a partir de la fecha en que debi&oacute; pagarse hasta la fecha de su pago total, a una tasa que ser&aacute; calculada a raz&oacute;n de multiplicar la Tasa Fija referida en el presente </span><strong>Pagar&eacute; </strong><span style="font-weight: 400;">por 2 (dos). Los intereses moratorios ser&aacute;n calculados en la fecha de su pago, en la forma que se determina en este </span><strong>Pagar&eacute;.</strong></p>
+<p><span style="font-weight: 400;">Si la fecha en que deba efectuarse cualquier pago, de acuerdo a lo estipulado en este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, resulta d&iacute;a inh&aacute;bil, el pago ser&aacute; realizado el d&iacute;a h&aacute;bil inmediato posterior. Para efectos de este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;"> por d&iacute;a h&aacute;bil se entiende cualquier otro diverso a s&aacute;bados y domingos y de aquellos que, por disposici&oacute;n de la Ley las Instituciones de Cr&eacute;dito, est&eacute;n obligadas a mantener sus puertas cerradas al p&uacute;blico.</span></p>
+<p><span style="font-weight: 400;">Todos los pagos que deban hacerse conforme al presente </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, se har&aacute;n libres y sin deducci&oacute;n o retenci&oacute;n por concepto de cualesquier impuesto, contribuci&oacute;n, deducci&oacute;n o retenciones de cualquier naturaleza que se impongan o graven en cualquier tiempo, por cualquier autoridad, respecto del pago del principal o intereses bajo este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, incluyendo especialmente, pero sin limitaci&oacute;n, el Impuesto Sobre la Renta en vigor. En caso de ser aplicables cualesquiera de los anteriores impuestos, contribuciones, deducciones o retenciones, la </span><strong>Suscriptora</strong><span style="font-weight: 400;"> deber&aacute; cubrir las cantidades adicionales que sean necesarias a fin de que la </span><strong>Beneficiaria</strong><span style="font-weight: 400;"> reciba las sumas que le corresponder&iacute;an conforme a este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;"> si no hubieran sido aplicables tales impuestos, contribuciones, deducciones o retenciones.</span></p>
+<p><span style="font-weight: 400;">La </span><strong>Beneficiaria</strong><span style="font-weight: 400;"> podr&aacute; dar por vencido anticipadamente el saldo insoluto del presente </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, si la </span><strong>Suscriptora</strong><span style="font-weight: 400;"> deja de realizar cualquier pago de capital y/o intereses ordinarios, en la forma y plazos estipulados en este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">La </span><strong>Suscriptora</strong><span style="font-weight: 400;"> por medio del presente promete pagar los gastos que impliquen el cobro de este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;"> y los honorarios de los abogados que intervengan en el cobro extrajudicial o judicial del mismo, en caso de que haya un incumplimiento en el pago de este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">La </span><strong>Suscriptora</strong><span style="font-weight: 400;"> en t&eacute;rminos del art&iacute;culo 128 de la Ley General de T&iacute;tulos y Operaciones de Cr&eacute;dito, conviene en extender el plazo de presentaci&oacute;n del presente </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;"> hasta un año posterior a la última fecha en la columna "Fecha de Pago"</span><span style="font-weight: 400;">&nbsp;en la inteligencia de que la extensi&oacute;n de dicho plazo no deber&aacute; entenderse como un impedimento para que la </span><strong>Beneficiaria</strong><span style="font-weight: 400;"> o el tenedor del Pagar&eacute; presente el mismo para su pago, con anterioridad a dicha fecha.</span></p>
+<!--p><span style="font-weight: 400;">El presente</span><strong> Pagar&eacute; </strong><span style="font-weight: 400;">se suscribe de conformidad con el Anexo A No.&nbsp;{{numero_anexo}}&nbsp;de fecha&nbsp;{{Dias}} de&nbsp;{{Mes}} de&nbsp;{{Año}} del </span><strong>Contrato de Apertura de Cr&eacute;dito Simple con Garant&iacute;a Prendaria sin Transmisi&oacute;n de la Posesi&oacute;n</strong><span style="font-weight: 400;">,</span> <span style="font-weight: 400;">identificado administrativamente con el n&uacute;mero {{numero_contrato}}</span><strong>&nbsp;</strong><span style="font-weight: 400;">de fecha</span> {{dia_firma}}<span style="font-weight: 400;">&nbsp;de&nbsp;{{mes_firma}} de {{año_firma}},</span> <span style="font-weight: 400;">celebrados entre la </span><strong>Suscriptora, </strong><span style="font-weight: 400;">la </span><strong>Beneficiaria </strong><span style="font-weight: 400;">y el</span><strong> Aval.</strong></p-->
+<!--p>Datos del Obligado solidario (aval): Nombre:
+Sergio Armando Huerta Samperio; RFC: huss751008FI5; Régimen Social:socio accionista;Nacionalidad:Mexicano;
+Originario de:Ciudad de México;CURP:HUSS751008HDFRMR02;Ocupación:Consultor;Teléfonos:+521 55 8097 6615;e-mail:sergio.huerta.samperio@gnail.com;
+Domicilio:Priv Roble 10, fracc Residendial Prado Largo, CP 52937, Atizapán de Zaragoza, México
+Estado Civil:Casado mediante separación de bienes
+</p-->
+
+
+<p><span style="font-weight: 400;">La </span><strong>Suscriptora</strong><span style="font-weight: 400;"> renuncia a toda diligencia, presentaci&oacute;n, protesto o aviso de no pago o incumplimiento o cualquier aviso de cualquier otro tipo respecto a este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">. La falta de ejercicio por parte de la </span><strong>Beneficiaria</strong><span style="font-weight: 400;"> de cualquiera de los derechos bajo este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;"> en cualquier caso concreto no constituir&aacute; una renuncia al mismo en dicho caso o en cualquier otro caso subsecuente.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Para la interpretaci&oacute;n, ejecuci&oacute;n y cumplimiento de lo pactado en este </span><strong>Pagar&eacute;</strong><span style="font-weight: 400;">, la </span><strong>Suscriptora</strong><span style="font-weight: 400;"> se somete a la jurisdicci&oacute;n de los tribunales competentes en la {{ciudad_firma}}, renunciando expresamente desde este momento a cualquier jurisdicci&oacute;n, competencia o fuero que pudiere corresponderle, en raz&oacute;n de su domicilio presente o futuro, o por cualquier otro motivo.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">Este Pagar&eacute; consta de&nbsp;3 p&aacute;ginas, mismas que han sido debidamente suscritas por la </span><strong>Suscriptora </strong><span style="font-weight: 400;">y el</span><strong> Aval</strong><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">&nbsp;</span></p>
+<p><span style="font-weight: 400;">Suscrito en {{ciudad_anexo}}, a los&nbsp;{{Dias}} d&iacute;as del mes de&nbsp;{{Mes}} de {{Año}}.</span></p>
+
+
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 50rem;">
+      <div class="card-body">
+        <h5 class="card-title">Suscriptora</h5>
+        					<br>
+							<br>
+							<br>
+							<br>
+        <p class="card-text"colspan="7">––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Representada: {{denominacion}}</p>
+        <p>Cargo: Representante Legal</p>
+        <p>Nombre: {{apoderado_acreditada}}</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div class="col-sm-8">
+    <div class="card" style="width: 50rem;">
+      <div class="card-body">
+      	<br>
+      	<br>
+      	<br>
+      	<br>
+      	<br>
+        <h5 class="card-title">Aval</h5>
+
+        <p class="card-text"colspan="7">–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––</p>
+        <p>Nombre: {{obligado_solidario}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<p align="right"><a  href="javascript:window.print()" class="btn btn-primary"></a></p>
+
+
+{% endblock %}

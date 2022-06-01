@@ -1,0 +1,477 @@
+/*
+ * Globals
+ */
+
+/* Links */
+a,
+a:focus,
+a:hover {
+  color: ;
+}
+
+/*Text Center*/
+.text-center{
+text-align: center;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #fff;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #fff;
+  border: .05rem solid #fff;
+}
+/* Unas Clases*/
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.left {
+  margin-right:auto;
+  margin-left:0px
+}
+
+/*
+ * Base structure
+ */
+
+html,
+body {
+
+  background-color: #fff;
+  box-shadow: inset 0 0 20rem rgba(0, 0, 0, .5);
+  text-align: justify;
+  text-justify: inter-word;
+
+
+}
+
+body {
+  display: -ms-flexbox;
+  display: flex;
+  color: rgba(0, 0, 0, .5);
+  /*text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);*/
+  box-shadow: inset 0 0 20rem rgba(0, 0, 0, .5);
+
+}
+
+
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -20px;
+}
+
+/*
+
+@media print {
+    .pagebreak {
+        clear: both;
+        page-break-after: always;
+    }
+}
+*/
+
+
+table {
+  /*border-collapse: collapse;*/
+  width: 100%;
+  /*border-bottom: 1px double #000;*/
+  width: 500px;
+}
+
+td {
+  /*border: 1px double #dddddd;*/
+  text-align: left;
+  padding: 8px;
+  vertical-align:top;border:1px solid #ccc;
+}
+
+/*tr:first-child td {
+  border-top: none;
+  height:1px;
+}*/
+
+tr:last-child td {
+  /*border-bottom: none;*/
+  height:100px;
+  width: 2500px;
+}
+
+/*td:first-child {
+  border-left: none;
+  width: 4000px;
+
+}*/
+
+td:last-child {
+  /*border-right: none;*/
+  width: 2500px;
+}
+
+.inversion{
+  width:500px;
+
+}
+
+.cover {
+    padding: 0 0rem;
+}
+
+/*
+* Margins
+*/
+.mr-auto, .mx-auto {
+    margin-right: auto!important;
+    margin-left: 50px;
+}
+.cover-container {
+  max-width: 60em;
+}
+
+.h-100 {
+    height: 100%!important;
+}
+/*
+ * Header
+ */
+.masthead {
+  margin-bottom: 2rem;
+}
+
+.masthead-brand {
+  margin-bottom: 0;
+}
+
+.nav-masthead .nav-link {
+  padding: 0.25rem 0;
+  font-weight: 700;
+  color: rgba(255, 255, 255, .5);
+  background-color: transparent;
+  border-bottom: .25rem solid transparent;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, .25);
+}
+
+.nav-masthead .nav-link + .nav-link {
+  margin-left: 2rem;
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+@media (min-width: 48em) {
+  .masthead-brand {
+    float: left;
+  }
+  .nav-masthead {
+    float: right;
+  }
+}
+
+div {
+  text-align: justify;
+  text-justify: inter-word;
+  width:800px;
+  font-size: 0.9em
+
+}
+
+table {
+    table-layout: fixed;
+    }
+
+
+/*
+ * Cover
+ */
+.cover {
+  padding: 0 1.5rem;
+}
+.cover .btn-lg {
+  padding: .75rem 1.25rem;
+  font-weight: 700;
+}
+
+
+/*
+ * Footer
+ */
+.mastfoot {
+  color: rgba(255, 255, 255, .5);
+}
+
+<style>
+  .container {
+    width:996px;
+    margin:0px auto;
+    font-size:1em;
+  }
+  section,aside {
+    padding: 10px;
+    background:#ccc;
+    -moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;
+  }
+  section {
+    float: left;
+    width: 70%;
+  }
+  aside {
+    float: right;
+    width: 25%;
+  }
+  nav {
+    overflow: hidden;
+  }
+  nav ul {
+    list-style-type:none;
+    float:left;
+    padding:0px;
+  }
+  nav ul li {
+    float:left;
+    padding:3px 10px;
+    margin:2px;
+    background:#ccccff;
+    -moz-border-radius:5px;-webkit-border-radius:5px;-o-border-radius:5px;border-radius:5px;
+  }
+  footer {
+    margin:10px;
+    text-align:center;
+    clear:both;
+  }
+
+  /* para 980px o menos */
+  @media screen and (max-width:1500px) {
+    .container {
+      width:98%;
+    }
+    section {
+      width:68%;
+    }
+  }
+
+  /* para 700px o menos */
+  @media screen and (max-width:700px) {
+    aside,section {
+      float:none;
+      width:96%;
+    }
+    nav, section {
+      font-size:1.2em;
+    }
+    aside {
+      margin-top:5px;
+    }
+    nav ul {
+      float:none;
+      clear:both;
+    }
+  }
+
+  /* para 480px o menos */
+  @media screen and (max-width:480px) {
+    aside {
+      display:none;
+    }
+    nav, section {
+      font-size:1.5em;
+    }
+    section {
+      width:94%;
+    }
+    nav ul {
+      float:left;
+      clear:none;
+      width:50%;
+    }
+    nav ul li {
+      float:none;
+    }
+  }
+
+/*Iphone X/XS iOS 12 Plus*/
+ @media only screen
+    and (device-width : 375px)
+    and (device-height : 812px)
+    and (-webkit-device-pixel-ratio : 3){
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:730px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:1000px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+ @media only screen
+    and (device-width : 812px)
+    and (device-height : 375px)
+    and (-webkit-device-pixel-ratio : 3){
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:730px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:900px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+/*Iphone 6/7/8 iOS 11 Plus*/
+ @media only screen
+    and (device-width : 414px)
+    and (device-height : 736px)
+    and (-webkit-device-pixel-ratio : 3){
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:1000px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+ /*Iphone 6/7/8 iOS 11*/
+ @media only screen
+    and (device-width : 375px)
+    and (device-height : 667px)
+    and (-webkit-device-pixel-ratio : 2){
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:720px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:900px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+
+ @media only screen
+    and (device-width : 667px)
+    and (device-height : 375px)
+    and (-webkit-device-pixel-ratio : 2){
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:720px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:780px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+/*Galaxy*/
+  @media only screen
+    and (device-width: 360px)
+    and (device-height: 740px)
+    and (-webkit-min-device-pixel-ratio : 4)
+    and (-webkit-device-pixel-ratio : 4)
+    and (orientation: portrait) {
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:720px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:900px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:700px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+
+  @media only screen
+    and (device-width: 740px)
+    and (device-height: 360px)
+    and (-webkit-min-device-pixel-ratio : 4)
+    and (-webkit-device-pixel-ratio : 4)
+    and (orientation: portrait) {
+  h6 {width:750px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:1000px;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+}
+
+/* iPhone 11 */
+  @media only screen
+    and (device-width: 414px)
+    and (device-height: 896px)
+    /*and (-webkit-min-device-pixel-ratio : 2)*/
+    and (-webkit-device-pixel-ratio : 3)
+    /*and (orientation: portrait)*/ {
+  h6 {width:500px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:2000px !important;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+
+}
+
+/* Desktop
+  @media only screen
+    and (device-width: 1400px)
+    and (device-height: 190px)
+    and (-webkit-min-device-pixel-ratio : 2)
+    and (-webkit-device-pixel-ratio : 2)
+    and (orientation: portrait) {
+  h6 {width:500px;
+  text-align: justify;
+  text-justify: inter-word;}
+  div {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+  body {width:5000px !important;
+  text-align: justify;
+  text-justify: inter-word;}
+  p {width:400px;
+  text-align: justify;
+  text-justify: inter-word;}
+
+}*/
+
+  </style>

@@ -1,0 +1,203 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <title>Creador de Anexos </title>
+    </head>
+        <body>
+            <h5>Creador de Anexos de Crédito Prendario</h5>
+            <form method="post" action="{{ url_for('legal.anexo_a_cp')}}">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                    <h5>Información Técnica del Crédito:</h5>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Periodo</span>
+                        <input type="text" class="form-control" placeholder="¿Cada cuantos días pagarán?" aria-label="days" name = "dias">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Tasa ordinaria</span>
+                        <input type="text" class="form-control" placeholder="En decimales" aria-label="days" name = "tasa_ordinaria_anual">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Duración</span>
+                        <input type="text" class="form-control" placeholder="En años (hasta en decimales)" aria-label="years" name = "years">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Principal</span>
+                        <input type="text" class="form-control" placeholder="Escribe la cantidad" aria-label="capital" name = "Principal">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Comisión</span>
+                        <input type="text" class="form-control" placeholder="En decimales" aria-label="comission" name = "tasa_comision">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Fecha de disposición</span>
+                        <input type="date" class="form-control" placeholder="Fecha en la que será ministrado el capital" aria-label="start month" name = "fechainicio" min="2020-01-01" max="2040-01-01">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Accesorios</span>
+                        <input type="text" class="form-control" placeholder="Monto mensual" aria-label="start date" name = "acc">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre</span>
+                        <input type="text" class="form-control" placeholder="Nombre o ID del cliente" aria-label="start date" name = "nombre">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Agregar</span>
+                        <input type="text" class="form-control" placeholder="1 para BDD, 2 para funcion global" aria-label="start date" name = "agregar">
+                    </div>
+
+                    <h5>Información descriptiva del Crédito:</h5>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Número Contrato maestro </span>
+                        <input type="text" class="form-control" placeholder="Número del contrato de Arrendamiento Puro celebrado" aria-label="start date" name = "numero_contrato">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Número Anexo A</span>
+                        <input type="text" class="form-control" placeholder="Número del presente anexo" aria-label="start date" name = "numero_anexo">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Día de la firma del contrato maestro</span>
+                        <input type="text" class="form-control" placeholder="Escribe el día en número" aria-label="start date" name = "dia_firma">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Mes de la firma del contrato maestro</span>
+                        <input type="text" class="form-control" placeholder="Escribe el mes en letra" aria-label="start date" name = "mes_firma">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Año de la firma del contrato maestro</span>
+                        <input type="text" class="form-control" placeholder="Escribe el año en número" aria-label="start date" name = "año_firma">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre de la Acreditante</span>
+                        <input type="text" class="form-control" placeholder="Denominación completa" aria-label="start date" name = "acreditante">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre del Apoderado</span>
+                        <input type="text" class="form-control" placeholder="Nombre completo de apoderado de la Acreditada" aria-label="start date" name = "apoderado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre de la Acreditada</span>
+                        <input type="text" class="form-control" placeholder="Denominación completa" aria-label="start date" name = "denominacion">
+                    </div>
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre del Apoderado</span>
+                        <input type="text" class="form-control" placeholder="Nombre completo de apoderado de la Arrendataria" aria-label="start date" name = "apoderado_acreditada">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre del Obligado Solidario</span>
+                        <input type="text" class="form-control" placeholder="Nombre Completo" aria-label="start date" name = "obligado_solidario">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Folio Fiscal Bien 1</span>
+                        <input type="text" class="form-control" placeholder="Escribe la clave de la factura de este bien o conjunto de bienes" aria-label="start date" name = "bien1_folio">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Descripción Bien 1</span>
+                        <input type="text" class="form-control" placeholder="Descripción según cotización" aria-label="start date" name = "bien1_descripcion">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Accesorios Bien 1</span>
+                        <input type="text" class="form-control" placeholder="ejemplo: viseras de un auto" aria-label="start date" name = "bien1_accesorios">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Observaciones Bien 1</span>
+                        <input type="text" class="form-control" placeholder="Observaciones de reconocimiento físico" aria-label="start date" name = "bien1_observaciones">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Precio del Bien 1</span>
+                        <input type="text" class="form-control" placeholder="Precio junto con su formato de precio" aria-label="start date" name = "bien1_precio">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cantidad del Bien 1</span>
+                        <input type="text" class="form-control" placeholder="Cantidad de bienes 1 idénticos en la misma factura" aria-label="start date" name = "bien1_cantidad">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Número Factura Bien 2</span>
+                        <input type="text" class="form-control" placeholder="Escribe la clave de la factura de este bien o conjunto de bienes" aria-label="start date" name = "bien2_folio">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Descripción Bien 2</span>
+                        <input type="text" class="form-control" placeholder="Descripción según cotización" aria-label="start date" name = "bien2_descripcion">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Accesorios Bien 2</span>
+                        <input type="text" class="form-control" placeholder="ejemplo: viseras de un auto" aria-label="start date" name = "bien2_accesorios">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Observaciones Bien 2</span>
+                        <input type="text" class="form-control" placeholder="Observaciones de reconocimiento físico" aria-label="start date" name = "bien2_observacio">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Precio del Bien 2</span>
+                        <input type="text" class="form-control" placeholder="Precio junto con su formato de precio" aria-label="start date" name = "bien2_precio">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cantidad del Bien 2</span>
+                        <input type="text" class="form-control" placeholder="Cantidad de bienes 1 idénticos en la misma factura" aria-label="start date" name = "bien2_cantidad">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Moneda</span>
+                        <input type="text" class="form-control" placeholder="Generalmente será 'MXN'" aria-label="start date" name = "moneda">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Destino</span>
+                        <input type="text" class="form-control" placeholder="objeto de este crédito" aria-label="start date" name = "destino">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Comisión por Pago Anticipado</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: 5% (cinco por ciento)" aria-label="start date" name = "comision_pagoanticipado">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Comisión por Cobranza Extrajudicial</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: $3,500.00 (tres mil quinientos pesos 00/100 pesos M.N.)" aria-label="start date" name = "extrajudicial">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Comisión por Reestructuración</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: 1% (uno por ciento)" aria-label="start date" name = "comision_reestructuracion">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Pena Convencional</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: $3,500.00 (tres mil quinientos pesos 00/100 pesos M.N.)" aria-label="start date" name = "pena_convencional">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Capital en Letras</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: tres mil quinientos pesos 00/100 pesos M.N." aria-label="start date" name = "capital_letra">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Tasa Ordinaria sin IVA en Letras</span>
+                        <input type="text" class="form-control" placeholder="Ejemplo: treinta y cinco por ciento punto veintidos por ciento" aria-label="start date" name = "tir_letra">
+                    </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Banco</span>
+                        <input type="text" class="form-control" placeholder="Entidad bancaria de la arrendadora" aria-label="start date" name = "banco">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">CLABE</span>
+                        <input type="text" class="form-control" placeholder="CLABE interbancaria de la Arrendadora" aria-label="start date" name = "CLABE">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cuenta</span>
+                        <input type="text" class="form-control" placeholder="Cuenta para transferencia en mismo banco de la Arrendadora" aria-label="start date" name = "cuenta">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Domicilio Acreditante</span>
+                        <input type="text" class="form-control" placeholder="Calle, Número, Interior, Colonia, Alcaldía, Ciudad, CP" aria-label="start date" name = "domicilio_acreditante">
+                    </div>
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciudad Firma Anexo</span>
+                        <input type="text" class="form-control" placeholder="Ciudad y Estado donde se firmó el Anexo" aria-label="start date" name = "ciudad_anexo">
+                    </div>
+                     <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Ciudad Firma Contrato Maestro</span>
+                        <input type="text" class="form-control" placeholder="Ciudad y Estado donde se firmó el contrato maestro" aria-label="start date" name = "ciudad_firma">
+                    </div>
+                    <button class="btn btn-primary" type="submit" value = "Cotizar">Crear</button>
+
+                    </div>
+            </form>
+        </body>
+</html>
+{% endblock %}
