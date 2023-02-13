@@ -4,6 +4,7 @@
 from flask import Blueprint, render_template, flash, Flask, redirect, url_for, request, session, json
 from flask_login import login_required, current_user
 from Scala.__init__ import create_app, db
+from flask_cors import CORS
 
 
 ########################################################################################
@@ -26,7 +27,8 @@ def profile():
 
 
 app = create_app() # we initialize our flask app using the __init__.py function
-
+CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 if __name__ == '__main__':
     app.config['DEBUG'] = True
     db.create_all(app=create_app()) # create the SQLite database

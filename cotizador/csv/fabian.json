@@ -1,0 +1,19 @@
+{
+    "count": 2,
+    "next": null,
+    "previous": null,
+    "results": [
+        {
+            "ah": "2Tns",
+            "ubicacion": "Queratoro",
+            "precio_dist": "$2,000",
+            "director": "TNANSVM plus plus"
+        },
+        {
+            "ah": "1Tns",
+            "ubicacion": "Toluca",
+            "precio_dist": "$7,000",
+            "director": "TNANSVM Ultra"
+        }
+   ]
+}

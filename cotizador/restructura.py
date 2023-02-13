@@ -21,6 +21,7 @@ from scipy.optimize import fsolve
 #from datetime import datetime, date
 import datetime
 from IPython.display import HTML
+from collections import defaultdict
 
 
 def reestructurar(d, time, df, df2):
@@ -31,3 +32,18 @@ def reestructurar(d, time, df, df2):
     dfhead = df.head(r)
     df3 = pd.concat([dfhead, df2.iloc[1: , :]])
     return(df3)
+
+def merge_dict(d1, d2):
+    dd = defaultdict(list)
+
+    for d in (d1, d2):
+        for key, value in d.items():
+            if isinstance(value, list):
+                dd[key].extend(value)
+            else:
+                dd[key].append(value)
+    return dict(dd)
+#dct1 = jsondict
+#dct2 =json.loads(jsondatos)
+#combined_dct = merge_dict(dct1, dct2)
+#json_str3 = json.dumps(combined_dct)

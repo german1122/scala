@@ -1,0 +1,43 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Cotizador</title>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"-->
+    </head>
+        <body>
+
+            <form method="post" action="{{ url_for('cotizador.forklift_form')}}">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                  
+                    <div>{{html | safe}}</div>
+                    <button class="btn btn-primary" type="submit">Cotizar</button>
+                <!--p><input type="submit" value="Cotizar" /></p-->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </form>
+        </body>
+        <script>
+        var $j = jQuery.noConflict();
+        $j(document).ready(function() {
+            $j.get("{{ url_for('cotizador.forklift2')}}", function(data, status){
+               $j('#lista1').html(data);
+
+            });
+            $j('.js-example-basic-single').select2();
+        });
+        </script>
+
+</html>
+{% endblock %}

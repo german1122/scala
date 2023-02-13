@@ -1,0 +1,92 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+  <head>
+    <br></br><br></br>
+    <h4 align=right>CDMX,
+      {{hoy}}</h4>
+      <div  style="text-align: center;" align="center">
+          <a href="https://tranzvm.com"  text-decoration: none;>
+          <img alt="https://tranzvm.com"  src= {{ url_for('static', filename='assets/pics/gtvm-2.jpeg') }}  height="200" style="outline: none; text-decoration: none;   max-width: 50%; float: none; text-align: center; margin: 0 auto; padding: 0px 0 0px; border: none;" align="none">
+          </a>
+      </div>
+    <title>Cotizador</title>
+    <style type="text/css">
+    @media print { body { -webkit-print-color-adjust: exact; } }
+    </style>
+  </head>
+    <body>
+
+
+      <div class="container">
+        <div class="row justify-content-center">
+          <h4 contenteditable='true'>Atn. {{cliente}}, de acuerdo a su solicitud me
+            permito presentar a Usted(es) la siguiente cotización:</h4>
+          <h4 contenteditable='true'>Cotización de re-manufactura y regeneración de baterías:</h4>
+        </div>
+      </div>
+
+      <div class="col-md-7">
+        <div class="card text-center"  style="width: 50rem;">
+          <div class="card-header">
+            <h3 class="card-title">Folio: {{folio}}</h3>
+          </div>
+          <div class="card-body">
+            <table class="table table-hover" id="myTable">
+              <thead>
+                <tr>
+                  <th scope="col"><h5><b>Concepto</b></h5></th>
+                  <th scope="col"><h5><b>Precio</b></h5>
+                  </th>
+                  <th scope="col"><h5><b>Cantidad</b></h5>
+                  </th>
+                  <th scope="col"><h5><b>Subtotal</b></h5>
+                  </th>
+                  <th scope="col"><h5><b>I.V.A.</b></h5>
+                  </th>
+                  <th scope="col"><h5><b>Total</b></h5>
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <!--tfoot>
+                <tr>
+                <td contenteditable='true'>foot1</td>
+                <td>foot2</td>
+                <td>foot3</td>
+                <td>foot4</td>
+                </tr>
+              </tfoot-->
+                <tbody>
+                  <div>{{html | safe}}</div>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <p></p><p></p><p></p><p></p><p
+
+      <p>&nbsp;</p>
+      <p><strong>Notas Aclaratorias:</strong></p>
+      <p><strong>Nota 1</strong><span style="font-weight: 400;">: Esta operación deberá pagarse un una sóla exhibición.</span></p>
+      <p><strong>Nota 2</strong><span style="font-weight: 400;">: El pago total deberá ser cubierto previo a la salida de los equipos de nuestras instalaciones.</span><em><span style="font-weight: 400;">.</span></em></p>
+      <p><strong>Nota 3</strong><span style="font-weight: 400;">: La vigencia de la presente propuesta para efectos de aceptaci&oacute;n es de 10 d&iacute;as, contados a partir de esta fecha, solicitando su firma y fecha en la misma. Grupo Tranzvm mantendr&aacute; los pagos durante los pr&oacute;ximos 10 d&iacute;as contados a partir de la fecha de aceptaci&oacute;n. Transcurrido este per&iacute;odo, los pagos podr&aacute;n cambiar de acuerdo a las condiciones de mercado, o por cambios en la configuraci&oacute;n, salvo el </span><strong>tipo de cambio FIX</strong><span style="font-weight: 400;"> a 48 horas, publicado por Banco de M&eacute;xico.</span></p>
+      <p><strong>Nota&nbsp; 4</strong><span style="font-weight: 400;">: En el caso del seguro, podr&aacute; contratarse mediante Vilar Kptl y estamos en posibilidad de incluir el costo de la prima dentro del pago peri&oacute;dico. En el pago se&ntilde;alado anteriormente no se incluye el seguro.</span></p>
+      <p><strong>Nota 5</strong><span style="font-weight: 400;">: Los pagos deber&aacute;n ser efectuados en pesos mexicanos, y se deber&aacute; adicionar el impuesto al valor agregado.</span></p>
+      <p><strong>Nota 6</strong><span style="font-weight: 400;">: Grupo TRANZVM S. A. de C. V. no será responsable de ningún daño, incluyendo, sin limitación, daños
+      personales, daños materiales, pérdida de negocio, o daños incidentales o consecuentes causados por o
+      relacionados con la mala operación de la batería, equipo, refacción y/o servicio.</span></p>
+      <p><strong>Nota 7</strong><span style="font-weight: 400;">: Cuentas vencidas: todos los importes no pagados están sujetos a un cargo de .05% por día por el tiempo máximo bajo la ley y en caso contrario al más alto porcentaje permitido bajo la misma. Todas las facturas
+vencidas están sujetas a cobro y costos legales.</span></p>
+      <p><strong>Nota 8:</strong><span style="font-weight: 400;"> Grupo TRANZVM puede modificar las premisas de esta cotizaci&oacute;n si llega a presentarse alg&uacute;n cambio adverso en las condiciones financieras del pa&iacute;s o del cliente.</span></p>
+      <p><strong>Nota 9:</strong><span style="font-weight: 400;"> El arrendatario deber&aacute; proporcionar toda la informaci&oacute;n financiera y legal que le requiera el arrendador para tramitar la l&iacute;nea de arrendamiento. Asimismo, durante la vigencia del contrato, deber&aacute; actualizar peri&oacute;dicamente sus estados financieros.</span></p>
+      <p><br /><br /></p>
+      <p><span style="font-weight: 400;">Agradecemos la oportunidad de servirle, poni&eacute;ndonos a sus &oacute;rdenes para cualquier aclaraci&oacute;n o informaci&oacute;n adicional.</span></p>
+      <p>&nbsp;</p>
+      <p><span style="font-weight: 400;">Atentamente,</span></p>
+
+      <p><span style="font-weight: 400;">Sergio Villanueva</span></p>
+      <p><strong>Grupo Tranzvm, S.A. de C.V.</strong></p>
+</html>
+{% endblock %}

@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de crédito</title>
+    <style>
+    body{
+      background: ;
+      font-family: sans-serif;
+    }
+    #loancal {
+  width: 380px;
+  height: 420px;
+  background-color:white;
+  color: #fff;
+  padding: 5px;
+  margin: 30px auto;
+}
+h1 {
+  font-size:30px;
+  text-align: center;
+  color: rgb(193,39,45,255);
+  margin-bottom: 35px;
+}
+.input{
+  margin-left: 40px;
+  margin-right: 40px;
+}
+p{
+color: rgb(193,39,45,255);
+font-size: 17px;
+}
+output{
+color: rgb(193,39,45,255);
+font-size: 17px;
+
+}
+input{
+  width: 100%;
+  height: 33px;
+}
+
+#interest_rate {
+  margin-left: 2px;
+}
+ h2{
+   text-align: center;
+   color: rgb(193,39,45,255);
+   margin-top: 35px;
+ }
+ button {
+  width: auto;
+  display: block;
+  margin: auto;
+}
+
+    </style>
+
+    <table class="twelve columns" style="border-spacing: 0; border-collapse: collapse; vertical-align: top; text-align: center; width: 540px; margin: 0 auto; padding: 0;">
+      <tr style="vertical-align: top; text-align: center; padding: 0;" align="center">
+          <td style="word-break: break-word; -webkit-hyphens: auto; -moz-hyphens: auto; hyphens: auto; border-collapse: collapse !important; vertical-align: top; text-align: center; color: #333333; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: normal; line-height: 20px; font-size: 14px; margin: 0; padding: 0px 0px 10px;" align="center" valign="top">
+          <div class="mark" style="text-align: center;" align="center">
+              <a href="Ruby Leasing" style="color: #4183C4; text-decoration: none;">
+              <img alt="https://ruby.lease/aviso.html" class="center logo-wordmark"src="https://i.imgur.com/TGDk7tG.png"  height="100" style="outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; width: auto; max-width: 100%; float: none; text-align: center; margin: 0 auto; padding: 25px 0 17px; border: none;" align="none">
+              </a>
+          </div>
+          </td>
+      </tr>
+    </table>
+</head>
+<body>
+    <div id="loancal">
+        <h1>Calculadora de inversión por metas</h1>
+        <div class="input">
+        <p>Pago mensual: $</p>
+          <input id="pago" type="number" min="1" value = "12000" max="9000000000000000000" step = "1000" onchange="computeLoan()">
+        <p>Capital meta: $</p>
+          <input id="amount" type="number" min="1" value = "300000" max="9000000000000000000" step = "1000" onchange="computeLoan()">
+
+        <!--h2>Por favor escoja un número de meses para financiar su proyecto.</h2>
+        <p>Número de meses: </p>
+         <input type="range" id="months" value="6" min="1" max="240"  step="1"  onchange="computeLoan()" oninput= 'this.nextElementSibling.value = this.value'>
+         <output>6</output-->
+      </div>
+        <!--h2 id="payment"></h2-->
+        <h2 id="plazo"></h2>
+        <h2 id="plazo_cetes"></h2>
+      </div>
+    <br><br><br><br><br><br><br><br><br><br>
+    <button><a  href="javascript:window.print()" class="btn btn-primary">Imprimir PDF</a></button>
+    <figure class="highcharts-figure">
+    <div id="container"></div>
+
+    </figure>
+
+
+
+    <script type="text/javascript">
+    function computeLoan(){
+        const params = new URLSearchParams(document.location.search);
+        const interest_ic = params.get("tic");
+
+        const amount = parseFloat(document.querySelector('#amount').value);
+        const pago = parseFloat(document.querySelector('#pago').value);
+        const r_ic = interest_ic*0.01/12;
+
+        let T = Math.log(1+amount*r_ic/pago)/Math.log(1 + r_ic);
+        let Tcetes = Math.log(1+amount*0.0075/pago)/Math.log(1 +0.0075);
+        let ganancia = amount - pago*T;
+        let inversion = pago*T;
+        //let pago_total = amount + ganancia;
+        //payment = payment.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); //\B looks for a word boundary, ? says what to look for, \d looks for 3 digits in a row
+        plazo = T.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        plazo_cetes = Tcetes.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+        document.querySelector('#plazo').innerHTML = `Para lograr esta meta es necesario aportar este pago durante ${plazo} meses: exactamente ${(plazo/12).toFixed(2)} años.`
+        document.querySelector('#plazo_cetes').innerHTML = `Para lograr esta meta en Cetes sería necesario aportar este pago durante ${plazo_cetes} meses: exactamente ${(plazo_cetes/12).toFixed(2)} años.`
+
+        Highcharts.chart('container', {
+          chart: {
+            type: 'column'
+          },
+          title: {
+            text: 'Inversión vs. Ganancia'
+          },
+          subtitle: {
+            text: 'A continuación se muestran inversión, ganancia y pago total:'
+          },
+          xAxis: {
+            categories: [
+              'Ganancia',
+              'Inversión',
+              'Pago Total'
+            ],
+            crosshair: true
+          },
+          yAxis: {
+            title: {
+              useHTML: true,
+              text: 'Million tonnes CO<sub>2</sub>-equivalents'
+            }
+          },
+          tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+              '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+          },
+          plotOptions: {
+            column: {
+              pointPadding: 0.2,
+              borderWidth: 0
+            }
+          },
+          series: [{
+            name: 'Inversión',
+            data: [inversion]
+
+          }, {
+            name: 'Ganancia',
+            data: [ganancia]
+
+          }, {
+            name: 'Pago Total',
+            data: [amount]
+
+          }]
+        });
+    }
+    </script>
+    <script>
+      var result = document.getElementById("result");
+      var mine = document.getElementById("mine");
+      function change(){
+          result.innerText = mine.value;
+      }
+    </script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+</body>
+</html>

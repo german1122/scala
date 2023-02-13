@@ -1,0 +1,39 @@
+concepto, precio_unitario,descripcion
+diganostico,990.00,Diagnostico por batería: mediante una grafica que arroja porcentaje de vida y operación de condiciones reales de una batería
+nivelacion,550.00,Nivelación de electrolito digital:        Que garantice la correcta reacción quimica que no dañe su equipo y lo mantenga operando en excelentes condiciones
+cambio de cables,"2,600.00",  2/0                                                        
+cambio de cables,"3,600.00",4/0
+conector gris,"1,000.00",SB175                                                                                                                           
+conector gris,"1,000.00",SB350
+conector gris,"1,400.00",SBX175
+conector gris,"1,400.00",SBX350
+conector rojo,"1,000.00",SB175                                                                                                                           
+conector rojo,"1,000.00",SB350
+conector rojo,"1,400.00",SBX175
+conector rojo,"1,400.00",SBX350
+conector azul,"1,000.00",SB175                                                                                                                           
+conector azul,"1,000.00",SB350
+conector azul,"1,400.00",SBX175
+conector azul,"1,400.00",SBX350
+conector amarillo,"1,000.00",SB175                                                                                                                           
+conector amarillo,"1,000.00",SB350
+conector amarillo,"1,400.00",SBX175
+conector amarillo,"1,400.00",SBX350
+jaladera,550.00,Jaladera:
+extracción de celda,800.00,"Extracción de celda, incluye:       limpieza de placas, limpieza de sedimentos y soldadura de puentes externos.         "
+reparación de celda,"1,500.00",Reparación de celda:            Reparación de peine y puentes internos
+cambio de placas,800.00,Cambio de placas:                      Mano de obra                             PLACAS:Depende de la medida y si son placas seminuevas o nuevas
+cambio de celda,A COTIZAR,Cambio de celda:                                El costo depende de la medida de la misma y si es nueva o seminueva
+cambio de puetes,790.00,sencillos
+cambio de puetes,"1,140.00",dobles
+cambio de puetes,350.00,excedente
+reparación de puente (resoldeo),450.00,Reparación de puente (resoldeo)
+cambio de terminal completa,790.00,Cambio de terminal completa:       Reparación de terminal:                               
+cambio de vaso de celda seminuevo,700.00,Cambio de vaso de celda seminuevo:                          Reparación de vaso de celda:
+cambio de tapa de celda,250.00,Reparación de tapa de celda:
+power supply,"8,000.00","Power Supply:                                   Borra la memoria de la celda en su totalidad, permitiendole voler a cargar su porcentaje real de carga inicial. Garantia de 6 meses"
+regeneración : de 24 a 48 volts,"20,990.00",Regeneración:                                 De 24 - 48 V                                      De 80 - 96 V                                 Recupera el porcentaje de vida y de operación de su batería considerablemente y detiene el proceso de sedimentación.                                           
+limpieza general,999.00,Limpieza general y pintura:
+ regeneración de 80 a 96 volts,"219,990.00",
+ Reparación de vaso de celda:,350.00,
+ Reparación de tapa de celda seminueva,550.00,

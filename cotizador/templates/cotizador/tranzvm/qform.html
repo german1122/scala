@@ -1,0 +1,82 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <title>Cotizador</title>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"-->
+    </head>
+        <body>
+
+            <form method="post" action="{{ url_for('cotizador.forklift2')}}">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Baterías</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantas baterías cotizarás?" aria-label="days" name = "baterias">
+                        <input type="text" class="form-control" placeholder="¿Cuantos materiales cotizarás?" aria-label="days" name = "productos_bat">
+                        <input type="text" class="form-control" placeholder="¿Cuantos servicios cotizarás?" aria-label="days" name = "servicios_bat">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Cargadores</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantos cargadores cotizarás?" aria-label="days" name = "cargadores">
+                        <input type="text" class="form-control" placeholder="¿Cuantos materiales cotizarás?" aria-label="days" name = "productos_car">
+                        <input type="text" class="form-control" placeholder="¿Cuantos servicios cotizarás?" aria-label="days" name = "servicios">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Montacargas</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantos montacargas cotizarás?" aria-label="days" name = "montacargas">
+                        <input type="text" class="form-control" placeholder="¿Cuantos materiales cotizarás?" aria-label="days" name = "productos_mont">
+                        <input type="text" class="form-control" placeholder="¿Cuantos servicios cotizarás?" aria-label="days" name = "servicios">
+                    </div>
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Montacargas2</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantos montacargas2 cotizarás?" aria-label="days" name = "montacargas2">
+                    </div-->
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Productos</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantos productos cotizarás?" aria-label="days" name = "productos">
+                    </diV-->
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Proveedores</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantos proveedores cotizarás?" aria-label="days" name = "proveedores">
+                    </div-->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Regeneraciones</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantas regeneraciones cotizarás?" aria-label="days" name = "regeneraciones">
+                        <input type="text" class="form-control" placeholder="¿Cuantos materiales cotizarás?" aria-label="days" name = "productos">
+                        <input type="text" class="form-control" placeholder="¿Cuantos servicios cotizarás?" aria-label="days" name = "servicios">
+                    </div>
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Regeneraciones2</span>
+                        <input type="text" class="form-control" placeholder="¿Cuantas regeneraciones2 cotizarás?" aria-label="days" name = "regeneraciones2">
+                    </div-->
+
+                    <button class="btn btn-primary" type="submit">Cotizar</button>
+                <!--p><input type="submit" value="Cotizar" /></p-->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </form>
+        </body>
+        <!--script>
+        var $j = jQuery.noConflict();
+        $j(document).ready(function() {
+            $j.get("{{ url_for('cotizador.forklift2')}}", function(data, status){
+               $j('#lista1').html(data);
+
+            });
+            $j('.js-example-basic-single').select2();
+        });
+      </script-->
+
+</html>
+{% endblock %}

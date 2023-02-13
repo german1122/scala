@@ -1,0 +1,13 @@
+concepto,volts,costo_reparacion,costo_regeneracion,cliente
+Batería con descarga forzada menor a 3.5 horas,24,N/A," $ 18,500.00 ",Nissan
+Batería con descarga forzada menor a 3.5 horas,36,N/A," $ 20,000.00 ",Nissan
+Batería con descarga forzada menor a 3.5 horas,48,N/A," $ 23,000.00 ",Nissan
+Batería con descarga forzada menor a 3.5 horas,72 y 80,N/A," $ 29,000.00 ",Nissan
+Batería con descarga forzada mayor a 4 horas,24," $ 8,900.00 ",N/A,Nissan
+Batería con descarga forzada mayor a 4 horas,36,10000,N/A,Nissan
+Batería con descarga forzada mayor a 4 horas,48,12000,N/A,Nissan
+Batería con descarga forzada mayor a 4 horas,72,15000,N/A,Nissan
+Batería con descarga forzada mayor a 4 horas,80," $ 18,000.00 ",N/A,Nissan
+Extracción de celda,N/A,950,N/A,Nissan
+cambio de celda,N/A,depende el modelo,N/A,Nissan
+power supply,N/A,11000,N/A,Nissan

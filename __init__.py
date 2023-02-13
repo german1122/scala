@@ -7,12 +7,12 @@ from flask_login import LoginManager
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from flask_bootstrap import Bootstrap
-from flask_datepicker import datepicker
+#from flask_bootstrap import Bootstrap
+#from flask_datepicker import datepicker
 #from Ruby.models import User
 from flask_login import UserMixin
 import sqlite3
-from flask_cors import CORS
+#from flask_cors import CORS
 
 
 ########################
@@ -116,7 +116,7 @@ class legal_ap_a(Base):
     residual = db.Column(db.Float)
     Accesorios = db.Column(db.Float)
     Enganche = db.Column(db.Float)
-    
+
     Rentas_ptg = db.Column(db.Float)
     startdate = db.Column(db.DateTime)
     # Información del Anexo a partir de aquí
@@ -178,9 +178,9 @@ Base.metadata.create_all(engine)
 
 def create_app():
     app = Flask(__name__) # creates the Flask instance, __name__ is the name of the current Python module
-    CORS(app)
-    Bootstrap(app)
-    datepicker(app)
+    #CORS(app)
+    #Bootstrap(app)
+    #datepicker(app)
     app.config['SECRET_KEY'] = 'secret-key-goes-here' # it is used by Flask and extensions to keep data safe
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite' #it is the path where the SQLite database file will be saved
 
@@ -212,5 +212,7 @@ def create_app():
     from Scala.legal import legal_bp
     app.register_blueprint(legal_bp)
 
-   
+    
+
+
     return app
