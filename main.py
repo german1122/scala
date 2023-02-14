@@ -30,6 +30,6 @@ app = create_app() # we initialize our flask app using the __init__.py function
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 if __name__ == '__main__':
-    app.config['DEBUG'] = True
+   # app.config['DEBUG'] = True
     db.create_all(app=create_app()) # create the SQLite database
-    app.run(host="0.0.0.0", port=int("5000"), debug=True) # run the flask app on debug mode
+    app.run(host="0.0.0.0", port=int("5000"), debug=False) # run the flask app on debug mode

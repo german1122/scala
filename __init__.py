@@ -7,6 +7,7 @@ from flask_login import LoginManager
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
+import sqlalchemy
 #from flask_bootstrap import Bootstrap
 #from flask_datepicker import datepicker
 #from Ruby.models import User
