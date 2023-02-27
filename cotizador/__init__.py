@@ -35,6 +35,7 @@ from flask_cors import CORS, cross_origin
 from email.mime.multipart import MIMEMultipart
 import ssl
 from email.mime.text import MIMEText
+import pywhatkit
 
 #from .mensajes import send_mails
 #from jsonmerge import merge, mergeStrategy
@@ -57,7 +58,7 @@ def mensajeria():
         # Get a list of all files in the templates directory
         template_files = [f for f in os.listdir(template_dir) if f.endswith('.html')]
 
-        return render_template("cotizador/mensajeria/cuestionario.html", templates=template_files)
+        return render_template("cotizador/mensajeria/cuestionario-email.html", templates=template_files)
     elif request.method == "POST":
 
         file = request.files["excel"]
@@ -85,10 +86,10 @@ def mensajeria():
             nombre_emisor = row[4]
             saludo = row[5]
             nombre_receptor = row[6]
-
+            nombre_vendedor = row[7]
             #textoglobal = str(render_template("cotizador/mensajeria/email-inlined2.html",
             textoglobal = str(render_template("cotizador/mensajeria/"+str(selected_template),
-            text = text, nombre = nombre_receptor, nombre_emisor=nombre_emisor, saludo=saludo))
+            text = text, nombre_receptor = nombre_receptor, nombre_emisor=nombre_emisor, saludo=saludo,nombre_vendedor=nombre_vendedor ))
             # Define the message content
             message = MIMEMultipart("alternative")
             message['Subject'] = asunto
@@ -113,8 +114,50 @@ def mensajeria():
 
         #return render_template("cotizador/mensajeria/email-inlined2.html", text = text, nombre = nombre)
         return render_template("cotizador/mensajeria/" + str(selected_template),
-        text = text, nombre = nombre_receptor, nombre_emisor=nombre_emisor, saludo=saludo)
+        text = text, nombre_receptor = nombre_receptor, nombre_emisor=nombre_emisor, saludo=saludo, nombre_vendedor=nombre_vendedor)
 
+@cotizador_bp.route("/mensajeria-whats", methods=["GET", "POST"])
+def whatsapp():
+    if request.method == "GET":
+        template_dir = os.path.join(os.getcwd(), 'cotizador/templates/cotizador/mensajeria')
+
+        # Get a list of all files in the templates directory
+        template_files = [f for f in os.listdir(template_dir) if f.endswith('.html')]
+
+        return render_template("cotizador/mensajeria/cuestionario-whats.html", templates=template_files)
+    elif request.method == "POST":
+
+        file = request.files["excel"]
+        file_content = file.read().decode("utf-8")
+        csvreader = csv.reader(io.StringIO(file_content))
+
+        text = str(request.form["parrafo"])
+        header = next(csvreader)
+        header = next(csvreader)
+        rows = []
+
+        for row in csvreader:
+            rows.append(row)
+            telefono = row[0]
+            nombre_receptor = row[1]
+            saludo=row[2]
+            text_complete = saludo + " " + nombre_receptor + " " + text
+            now = datetime.now()
+            hour = now.hour
+            minute = now.minute + 1
+            segundo = now.second
+            new_minute = int(minute)
+            new_minute = new_minute
+            print (hour,new_minute, nombre_receptor)
+            telf = "+52"+telefono
+            if segundo >= 40:
+                new_minute = new_minute + 1
+            if new_minute == 60:
+                new_minute = 1
+                hour = hour + 1
+            pywhatkit.sendwhatmsg(telf,text_complete,hour,new_minute,15,True,5)
+
+        return render_template("cotizador/mensajeria/respuesta-w.html" )
 
 @cotizador_bp.route("/cuestionario", methods=["POST", "GET"])
 def cotizador():

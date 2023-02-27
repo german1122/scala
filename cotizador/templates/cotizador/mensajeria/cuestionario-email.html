@@ -1,0 +1,62 @@
+{% extends "base0.html" %}
+{% block content %}
+<html>
+    <head>
+    <title>Mensajería</title>
+    <!--link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}"-->
+    </head>
+        <body>
+
+            <form method="post" action="{{ url_for('cotizador.mensajeria')}}" enctype="multipart/form-data" id="usrform">
+                <div class =  "container-fluid">
+                    <p>Introduzca los datos solicitados:</p>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">CSV</span>
+                        <input  type="file" class="form-control" placeholder="csv" aria-label="days" name = "excel">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">mensaje</span>
+                        <input  type="text" class="form-control" placeholder="mensaje de texto" aria-label="days" name = "parrafo">
+                    </div>
+                    <div class="input-group mb-3">
+                      <select name="selected_template">
+                       {% for template in templates %}
+                         <option value="{{ template }}" class="form-select">{{ template }}</option>
+                       {% endfor %}
+                      </select>
+                    </div>                                        
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Nombre (de prueba) del receptor</span>
+                        <input  type="text" class="form-control" placeholder="nombre receptor" aria-label="days" name = "nombre">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Asunto del correo</span>
+                        <input  type="text" class="form-control" placeholder="nombre receptor" aria-label="days" name = "asunto">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Texto previo (preheader)</span>
+                        <input  type="text" class="form-control" placeholder="Crédito de nómina y caja de inversión" aria-label="days" name = "preheader">
+                    </div>
+                    <!--div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Con Copia a:</span>
+                        <input  type="text" class="form-control" placeholder="german.villar@olimerkptl.com" aria-label="days" name = "concopia">
+                    </div-->
+
+
+                    <button class="btn btn-primary" type="submit">Correr campaña</button>
+             </form>
+                <!--p><input type="submit" value="Cotizar" /></p-->
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                </div>
+            </form>
+        </body>
+</html>
+{% endblock %}
